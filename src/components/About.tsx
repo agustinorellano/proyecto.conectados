@@ -1,22 +1,38 @@
+import { Search, Compass, PenTool, RefreshCw } from 'lucide-react';
 import { RollButton } from './RollButton';
 import { Reveal } from './Reveal';
 
-function PlaceholderBlock({ className = '' }: { className?: string }) {
-  return (
-    <div
-      className={`rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#3355FF] to-[#0E1A6B] ${className}`}
-    />
-  );
-}
+const HIGHLIGHTS = [
+  {
+    icon: Search,
+    title: 'Investigación',
+    description: 'Entendemos tu negocio antes de proponer nada.',
+  },
+  {
+    icon: Compass,
+    title: 'Estrategia',
+    description: 'Definimos un plan claro, no una lista de tareas sueltas.',
+  },
+  {
+    icon: PenTool,
+    title: 'Diseño',
+    description: 'Cada pieza piensa en cómo se usa, no solo en cómo se ve.',
+  },
+  {
+    icon: RefreshCw,
+    title: 'Iteración',
+    description: 'Medimos y ajustamos después del lanzamiento, no solo antes.',
+  },
+];
 
 export function About() {
   return (
     <section
       id="estudio"
-      className="bg-white pt-16 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-24 overflow-hidden"
+      className="bg-white pt-16 sm:pt-20 lg:pt-32 pb-16 sm:pb-20 lg:pb-28 overflow-hidden"
     >
-      <div className="max-w-[1440px] mx-auto">
-        <Reveal className="px-5 sm:px-8 lg:px-12 flex items-center gap-3 mb-6 sm:mb-8">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
+        <Reveal className="flex items-center gap-3 mb-6 sm:mb-8">
           <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-gray-900 text-white text-[11px] sm:text-xs font-semibold flex items-center justify-center">
             1
           </span>
@@ -25,63 +41,40 @@ export function About() {
           </span>
         </Reveal>
 
-        <Reveal delay={80}>
-          <h2
-            className="font-medium text-gray-900 leading-[1.12] tracking-[-0.02em] px-5 sm:px-8 lg:px-12 mb-12 sm:mb-16 lg:mb-28"
-            style={{ fontSize: 'clamp(1.5rem, 4vw, 3.2rem)' }}
-          >
-            Estrategia y ejecución en un solo equipo,
-            <br />
-            con resultados en cada uno de tus 4 pilares.
-          </h2>
-        </Reveal>
-
-        <div className="lg:hidden px-5 sm:px-8">
-          <Reveal delay={120}>
-            <p className="text-[15px] sm:text-[17px] leading-[1.6] font-medium text-gray-900 mb-6">
-              A través de investigación, diseño estratégico e iteración constante ayudamos a
-              empresas en crecimiento a alcanzar su potencial digital completo.
-            </p>
-            <RollButton text="Conocé nuestro estudio" href="#contacto" variant="ghost" size="lg" />
-          </Reveal>
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 mt-10">
-            <Reveal delay={160} className="sm:w-[45%]">
-              <PlaceholderBlock className="aspect-[438/346]" />
-            </Reveal>
-            <Reveal delay={220} className="sm:w-[55%]">
-              <PlaceholderBlock className="aspect-[900/600]" />
-            </Reveal>
-          </div>
-        </div>
-
-        <div className="hidden lg:grid grid-cols-[26%_1fr_48%] items-end gap-6 xl:gap-8 px-5 sm:px-8 lg:px-12">
-          <Reveal delay={120}>
-            <PlaceholderBlock className="aspect-[438/346]" />
-          </Reveal>
-          <div className="self-start flex justify-end">
-            <Reveal delay={180} className="text-right">
-              <p className="text-base xl:text-lg leading-[1.65] whitespace-nowrap text-gray-900 mb-6">
-                A través de investigación, diseño estratégico
-                <br />
-                e iteración constante ayudamos a empresas
-                <br />
-                en crecimiento a alcanzar su potencial digital
-                <br />
-                completo.
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+          <div>
+            <Reveal delay={80}>
+              <h2
+                className="font-medium text-gray-900 leading-[1.12] tracking-[-0.02em] mb-6"
+                style={{ fontSize: 'clamp(1.5rem, 3.2vw, 2.6rem)' }}
+              >
+                Estrategia y ejecución en un solo equipo
+              </h2>
+              <p className="text-[15px] sm:text-lg leading-relaxed text-gray-600 max-w-md mb-8">
+                A través de investigación, diseño estratégico e iteración constante ayudamos a
+                empresas en crecimiento a alcanzar su potencial digital completo — con resultados
+                en cada uno de tus 4 pilares.
               </p>
-              <div className="flex justify-end">
-                <RollButton
-                  text="Conocé nuestro estudio"
-                  href="#contacto"
-                  variant="ghost"
-                  size="lg"
-                />
-              </div>
+              <RollButton text="Conocé nuestro estudio" href="#contacto" variant="ghost" size="lg" />
             </Reveal>
           </div>
-          <Reveal delay={240}>
-            <PlaceholderBlock className="aspect-[3/2]" />
-          </Reveal>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+            {HIGHLIGHTS.map((h, i) => {
+              const HIcon = h.icon;
+              return (
+                <Reveal key={h.title} delay={140 + i * 70}>
+                  <div className="border border-gray-200 rounded-2xl p-6 h-full">
+                    <span className="w-11 h-11 rounded-xl bg-[#EEF2FF] flex items-center justify-center mb-5">
+                      <HIcon size={20} className="text-[#3355FF]" strokeWidth={1.6} />
+                    </span>
+                    <h3 className="text-[15px] font-semibold text-gray-900 mb-2">{h.title}</h3>
+                    <p className="text-[13.5px] text-gray-600 leading-relaxed">{h.description}</p>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

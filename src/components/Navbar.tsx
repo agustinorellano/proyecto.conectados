@@ -1,18 +1,40 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { LogoBadge } from './Logo';
 import { RollButton } from './RollButton';
 import { LiveClock } from './LiveClock';
+import { useScrollSpy } from '../hooks/useScrollSpy';
 
 const NAV_LINKS = [
-  { label: 'Servicios', href: '/#pilares' },
-  { label: 'Estudio', href: '/#estudio' },
-  { label: 'Casos', href: '/#casos' },
-  { label: 'Contacto', href: '/#contacto' },
+  { label: 'Servicios', href: '/#pilares', id: 'pilares' },
+  { label: 'Cómo trabajamos', href: '/#estudio', id: 'estudio' },
+  { label: 'Contacto', href: '/#contacto', id: 'contacto' },
 ];
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+  const activeId = useScrollSpy(
+    NAV_LINKS.map((l) => l.id),
+    pathname === '/',
+  );
+
+  const navRef = useRef<HTMLDivElement>(null);
+  const linkRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
+  const [pill, setPill] = useState({ left: 0, width: 0, visible: false });
+
+  useEffect(() => {
+    const nav = navRef.current;
+    const link = activeId ? linkRefs.current[activeId] : null;
+    if (!nav || !link) {
+      setPill((p) => ({ ...p, visible: false }));
+      return;
+    }
+    const navRect = nav.getBoundingClientRect();
+    const linkRect = link.getBoundingClientRect();
+    setPill({ left: linkRect.left - navRect.left, width: linkRect.width, visible: true });
+  }, [activeId]);
 
   return (
     <div className="relative z-20 max-w-[1440px] mx-auto p-2 sm:p-3">
@@ -21,12 +43,26 @@ export function Navbar() {
           <a href="/" className="flex items-center gap-3">
             <LogoBadge />
           </a>
-          <div className="hidden md:flex items-center gap-6">
+          <div ref={navRef} className="relative hidden md:flex items-center gap-1">
+            <span
+              className="absolute top-0 bottom-0 rounded-full bg-[#3355FF] transition-all duration-[450ms] pointer-events-none"
+              style={{
+                left: pill.left,
+                width: pill.width,
+                opacity: pill.visible ? 1 : 0,
+                transitionTimingFunction: 'cubic-bezier(0.34,1.56,0.64,1)',
+              }}
+            />
             {NAV_LINKS.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className="text-sm text-gray-900 hover:text-gray-500 transition-colors duration-300"
+                ref={(el) => {
+                  linkRefs.current[l.id] = el;
+                }}
+                className={`relative z-10 text-sm px-4 py-2 rounded-full transition-colors duration-300 ${
+                  activeId === l.id ? 'text-white font-medium' : 'text-gray-500 hover:text-gray-900'
+                }`}
               >
                 {l.label}
               </a>
