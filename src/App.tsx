@@ -1,6 +1,8 @@
+import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Pillars } from './components/Pillars';
+import { Process } from './components/Process';
 import { CtaFooter } from './components/CtaFooter';
 import { useDocumentMeta } from './hooks/useDocumentMeta';
 
@@ -13,9 +15,11 @@ function App() {
 
   return (
     <div>
+      <Navbar />
       <Hero />
       <About />
       <Pillars />
+      <Process />
       <CtaFooter />
     </div>
   );

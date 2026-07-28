@@ -38,12 +38,9 @@ export function PillarPage() {
 
   return (
     <div>
+      <Navbar />
       <header className={`relative bg-gradient-to-br ${pillar.gradient} overflow-hidden`}>
-        <div className="relative z-20">
-          <Navbar />
-        </div>
-
-        <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 pt-6 pb-16 sm:pb-24">
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 pt-24 sm:pt-28 pb-16 sm:pb-24">
           <Reveal eager>
             <Link
               to="/#pilares"

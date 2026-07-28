@@ -9,6 +9,7 @@ import { useScrollSpy } from '../hooks/useScrollSpy';
 const NAV_LINKS = [
   { label: 'Servicios', href: '/#pilares', id: 'pilares' },
   { label: 'Cómo trabajamos', href: '/#estudio', id: 'estudio' },
+  { label: 'Nuestro proceso', href: '/#proceso', id: 'proceso' },
   { label: 'Contacto', href: '/#contacto', id: 'contacto' },
 ];
 
@@ -37,7 +38,7 @@ export function Navbar() {
   }, [activeId]);
 
   return (
-    <div className="relative z-20 max-w-[1440px] mx-auto p-2 sm:p-3">
+    <div className="fixed top-0 inset-x-0 z-40 max-w-[1440px] mx-auto p-2 sm:p-3">
       <nav className="bg-white rounded-full flex items-center justify-between p-[5px] pl-4 pr-2">
         <div className="flex items-center gap-6">
           <a href="/" className="flex items-center gap-3">

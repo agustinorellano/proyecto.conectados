@@ -1,5 +1,4 @@
 import { Shader, Swirl, ChromaFlow, FlutedGlass, FilmGrain } from 'shaders/react';
-import { Navbar } from './Navbar';
 import { RollButton } from './RollButton';
 import { LogoMark } from './Logo';
 import { Reveal } from './Reveal';
@@ -39,10 +38,6 @@ export function Hero() {
         </Shader>
       </div>
       <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-[#050814] via-[#050814]/10 to-transparent" />
-
-      <div className="relative z-20">
-        <Navbar />
-      </div>
 
       <div className="relative z-20 flex-1 flex flex-col justify-end">
         <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12 pb-14 sm:pb-16 lg:pb-20">
