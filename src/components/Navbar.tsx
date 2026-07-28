@@ -25,6 +25,10 @@ export function Navbar() {
   const linkRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
   const [pill, setPill] = useState({ left: 0, width: 0, visible: false });
 
+  const mobileNavRef = useRef<HTMLDivElement>(null);
+  const mobileLinkRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
+  const [mobilePill, setMobilePill] = useState({ top: 0, height: 0, visible: false });
+
   useEffect(() => {
     const nav = navRef.current;
     const link = activeId ? linkRefs.current[activeId] : null;
@@ -36,6 +40,18 @@ export function Navbar() {
     const linkRect = link.getBoundingClientRect();
     setPill({ left: linkRect.left - navRect.left, width: linkRect.width, visible: true });
   }, [activeId]);
+
+  useEffect(() => {
+    const nav = mobileNavRef.current;
+    const link = activeId ? mobileLinkRefs.current[activeId] : null;
+    if (!nav || !link) {
+      setMobilePill((p) => ({ ...p, visible: false }));
+      return;
+    }
+    const navRect = nav.getBoundingClientRect();
+    const linkRect = link.getBoundingClientRect();
+    setMobilePill({ top: linkRect.top - navRect.top, height: linkRect.height, visible: true });
+  }, [activeId, open]);
 
   return (
     <div className="fixed top-0 inset-x-0 z-40 max-w-[1440px] mx-auto p-2 sm:p-3">
@@ -113,13 +129,27 @@ export function Navbar() {
               <X size={18} />
             </button>
           </div>
-          <div className="flex flex-col gap-1 mb-8">
+          <div ref={mobileNavRef} className="relative flex flex-col gap-1 mb-8">
+            <span
+              className="absolute left-0 right-0 rounded-2xl bg-[#3355FF] transition-all duration-[450ms] pointer-events-none"
+              style={{
+                top: mobilePill.top,
+                height: mobilePill.height,
+                opacity: mobilePill.visible ? 1 : 0,
+                transitionTimingFunction: 'cubic-bezier(0.34,1.56,0.64,1)',
+              }}
+            />
             {NAV_LINKS.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
+                ref={(el) => {
+                  mobileLinkRefs.current[l.id] = el;
+                }}
                 onClick={() => setOpen(false)}
-                className="text-[28px] sm:text-[32px] font-medium text-gray-900 py-2"
+                className={`relative z-10 text-[28px] sm:text-[32px] font-medium py-2 px-3 transition-colors duration-300 ${
+                  activeId === l.id ? 'text-white' : 'text-gray-900'
+                }`}
               >
                 {l.label}
               </a>
