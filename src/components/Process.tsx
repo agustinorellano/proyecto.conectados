@@ -39,12 +39,10 @@ export function Process() {
             Nuestro proceso
           </span>
           <h2
-            className="font-medium text-white leading-[1.05] tracking-[-0.03em] max-w-3xl"
-            style={{ fontSize: 'clamp(2.2rem, 5.5vw, 4.4rem)' }}
+            className="font-medium text-white leading-[1.15] tracking-[-0.03em] max-w-2xl"
+            style={{ fontSize: 'clamp(2.2rem, 4.6vw, 3.6rem)' }}
           >
-            De diagnóstico a resultados,
-            <br />
-            en 4 pasos
+            De diagnóstico a resultados, en 4 pasos
           </h2>
         </Reveal>
 
@@ -55,12 +53,6 @@ export function Process() {
             const Icon = step.icon;
             return (
               <Reveal key={step.title} delay={i * 100} className="relative text-center">
-                <span
-                  className="pointer-events-none select-none absolute left-1/2 -translate-x-1/2 -top-6 font-medium text-white/[0.06] leading-none"
-                  style={{ fontSize: 'clamp(4rem, 8vw, 6.5rem)' }}
-                >
-                  {String(i + 1).padStart(2, '0')}
-                </span>
                 <div className="relative inline-flex items-center justify-center w-[88px] h-[88px] sm:w-[100px] sm:h-[100px] rounded-full bg-white/[0.06] border border-white/10 mb-7">
                   <Icon size={32} className="text-white" strokeWidth={1.4} />
                   <span

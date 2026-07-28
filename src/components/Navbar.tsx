@@ -7,8 +7,8 @@ import { LiveClock } from './LiveClock';
 import { useScrollSpy } from '../hooks/useScrollSpy';
 
 const NAV_LINKS = [
-  { label: 'Servicios', href: '/#pilares', id: 'pilares' },
   { label: 'Cómo trabajamos', href: '/#estudio', id: 'estudio' },
+  { label: 'Servicios', href: '/#pilares', id: 'pilares' },
   { label: 'Nuestro proceso', href: '/#proceso', id: 'proceso' },
   { label: 'Contacto', href: '/#contacto', id: 'contacto' },
 ];
