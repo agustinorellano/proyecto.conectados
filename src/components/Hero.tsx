@@ -6,10 +6,13 @@ import { Reveal } from './Reveal';
 
 export function Hero() {
   return (
-    <header className="relative min-h-screen flex flex-col bg-[#050814] overflow-hidden">
-      <div className="absolute inset-0 z-10 pointer-events-none">
+    <header
+      className="relative min-h-screen flex flex-col bg-[#050814] overflow-hidden bg-cover bg-center"
+      style={{ backgroundImage: "url('/hero-bg.png')" }}
+    >
+      <div className="absolute inset-0 z-10 pointer-events-none mix-blend-screen">
         <Shader className="w-full h-full">
-          <Swirl colorA="#0B1230" colorB="#141B45" detail={1.9} />
+          <Swirl colorA="#0B1230" colorB="#141B45" detail={1.9} opacity={0.7} />
           <ChromaFlow
             baseColor="#0B1230"
             upColor="#3355FF"
@@ -35,6 +38,7 @@ export function Hero() {
           <FilmGrain strength={0.06} />
         </Shader>
       </div>
+      <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-[#050814] via-[#050814]/10 to-transparent" />
 
       <div className="relative z-20">
         <Navbar />
