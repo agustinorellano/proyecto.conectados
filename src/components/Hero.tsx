@@ -39,7 +39,7 @@ export function Hero() {
       </div>
       <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-[#050814] via-[#050814]/10 to-transparent" />
 
-      <div className="relative z-20 flex-1 flex flex-col justify-end">
+      <div className="relative z-20 flex-1 flex flex-col justify-end pt-24 sm:pt-28">
         <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12 pb-14 sm:pb-16 lg:pb-20">
           <Reveal eager>
             <span className="block text-[13px] sm:text-sm text-white/70 tracking-wide mb-5 sm:mb-8">
@@ -73,9 +73,10 @@ export function Hero() {
           <Reveal eager delay={200} className="mt-8 sm:mt-12 flex flex-col sm:flex-row gap-4 sm:gap-5">
             <RollButton
               text="Empezar un proyecto"
-              href="#contacto"
+              href="https://cal.com/contacto-conectados-hjslxl/30min"
               variant="accent"
               size="lg"
+              calLink="contacto-conectados-hjslxl/30min"
             />
 
             <div className="inline-flex items-center gap-3 bg-white rounded-[4px] px-3 py-2 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.12)] transition-shadow duration-300">

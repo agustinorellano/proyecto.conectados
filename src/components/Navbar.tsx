@@ -6,6 +6,8 @@ import { RollButton } from './RollButton';
 import { LiveClock } from './LiveClock';
 import { useScrollSpy } from '../hooks/useScrollSpy';
 
+const CAL_LINK = 'contacto-conectados-hjslxl/30min';
+
 const NAV_LINKS = [
   { label: 'Cómo trabajamos', href: '/#estudio', id: 'estudio' },
   { label: 'Servicios', href: '/#pilares', id: 'pilares' },
@@ -89,7 +91,13 @@ export function Navbar() {
 
         <div className="hidden md:flex items-center gap-4">
           <LiveClock />
-          <RollButton text="Agendar una llamada" href="/#contacto" variant="outline" size="sm" />
+          <RollButton
+            text="Agendar una llamada"
+            href={`https://cal.com/${CAL_LINK}`}
+            variant="outline"
+            size="sm"
+            calLink={CAL_LINK}
+          />
         </div>
 
         <button
@@ -155,7 +163,13 @@ export function Navbar() {
               </a>
             ))}
           </div>
-          <RollButton text="Empezar un proyecto" href="/#contacto" variant="accent" size="lg" />
+          <RollButton
+            text="Empezar un proyecto"
+            href={`https://cal.com/${CAL_LINK}`}
+            variant="accent"
+            size="lg"
+            calLink={CAL_LINK}
+          />
         </div>
       </div>
     </div>

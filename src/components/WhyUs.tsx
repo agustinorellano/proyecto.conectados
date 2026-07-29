@@ -21,7 +21,13 @@ export function WhyUs() {
             y lo resolvemos con soluciones pensadas para vos — no con plantillas genéricas.
           </p>
           <div className="flex flex-wrap items-center gap-5">
-            <RollButton text="Agendar una llamada" href="/#contacto" variant="dark" size="lg" />
+            <RollButton
+              text="Agendar una llamada"
+              href="https://cal.com/contacto-conectados-hjslxl/30min"
+              variant="dark"
+              size="lg"
+              calLink="contacto-conectados-hjslxl/30min"
+            />
             <div className="inline-flex items-center gap-3 bg-white rounded-[4px] px-3 py-2 border border-gray-200">
               <LogoMark className="w-5 h-5 text-[#3355FF]" />
               <span className="text-[13px] sm:text-sm font-medium text-gray-900">

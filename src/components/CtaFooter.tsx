@@ -22,11 +22,11 @@ export function CtaFooter() {
         </Reveal>
         <Reveal delay={200} className="flex justify-center">
           <RollButton
-            text="Escribinos por WhatsApp"
-            href="https://wa.me/5490000000000"
-            target="_blank"
-            variant="whatsapp"
+            text="Agendar una llamada"
+            href="https://cal.com/contacto-conectados-hjslxl/30min"
+            variant="accent"
             size="lg"
+            calLink="contacto-conectados-hjslxl/30min"
           />
         </Reveal>
       </section>

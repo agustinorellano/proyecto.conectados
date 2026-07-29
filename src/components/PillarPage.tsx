@@ -75,7 +75,13 @@ export function PillarPage() {
               </Reveal>
 
               <Reveal eager delay={220} className="mt-9 flex flex-wrap items-center gap-5">
-                <RollButton text="Empezar un proyecto" href="/#contacto" variant="accent" size="lg" />
+                <RollButton
+                  text="Empezar un proyecto"
+                  href="https://cal.com/contacto-conectados-hjslxl/30min"
+                  variant="accent"
+                  size="lg"
+                  calLink="contacto-conectados-hjslxl/30min"
+                />
                 {hasCases && (
                   <RollButton text="Ver proyectos" href="#casos-pilar" variant="ghost-light" size="lg" />
                 )}
