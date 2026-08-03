@@ -35,70 +35,161 @@ export function PillarPage() {
   const Icon = pillar.icon;
   const others = PILLARS.filter((p) => p.slug !== pillar.slug);
   const hasCases = !!pillar.cases?.length;
+  const isLight = pillar.heroTheme === 'light';
 
   return (
     <div>
       <Navbar />
-      <header className={`relative bg-gradient-to-br ${pillar.gradient} overflow-hidden`}>
-        <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 pt-24 sm:pt-28 pb-16 sm:pb-24">
-          <Reveal eager>
-            <Link
-              to="/#pilares"
-              className="inline-flex items-center gap-2 text-white/70 hover:text-white text-[13px] mb-10 sm:mb-14 transition-colors duration-300"
-            >
-              <ArrowLeft size={14} />
-              Volver a los pilares
-            </Link>
-          </Reveal>
-
-          <div className={pillar.serviceDetails ? 'grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-8 items-center' : ''}>
-            <div>
-              <Reveal eager delay={80}>
-                <span className="w-14 h-14 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center mb-6">
-                  <Icon size={26} className="text-white" strokeWidth={1.6} />
+      {isLight ? (
+        <header className="relative bg-gradient-to-br from-white via-[#F7F8FF] to-[#ECEFFF] overflow-hidden">
+          <div className="absolute top-[-10%] right-[-8%] w-[45vw] h-[45vw] max-w-[560px] max-h-[560px] rounded-full bg-[#3355FF]/8 blur-[2px] pointer-events-none" />
+          <div className="relative max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 pt-24 sm:pt-28 pb-16 sm:pb-24">
+            <Reveal eager>
+              <Link
+                to="/#pilares"
+                className="inline-flex items-center gap-2 text-[#3355FF] hover:text-[#2646E0] text-[13px] font-medium mb-10 sm:mb-14 transition-colors duration-300"
+              >
+                <span className="w-7 h-7 rounded-full border border-[#3355FF]/25 flex items-center justify-center">
+                  <ArrowLeft size={13} />
                 </span>
-              </Reveal>
+                Volver a los pilares
+              </Link>
+            </Reveal>
 
-              <Reveal eager delay={140}>
-                <span className="block text-[13px] text-white/60 tracking-wide mb-3">
-                  Pilares / {pillar.title}
-                </span>
-                <h1
-                  className="font-medium text-white leading-[1.1] tracking-[-0.03em] max-w-2xl"
-                  style={{ fontSize: 'clamp(1.9rem, 4.4vw, 3.1rem)' }}
-                >
-                  {pillar.tagline}
-                </h1>
-                <p className="text-white/70 text-[15px] sm:text-base leading-relaxed max-w-xl mt-6">
-                  {pillar.longDescription}
-                </p>
-              </Reveal>
+            <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-12 lg:gap-10 items-center">
+              <div>
+                <Reveal eager delay={80}>
+                  <span className="w-14 h-14 rounded-2xl bg-[#EEF2FF] flex items-center justify-center mb-6">
+                    <Icon size={26} className="text-[#3355FF]" strokeWidth={1.6} />
+                  </span>
+                </Reveal>
 
-              <Reveal eager delay={220} className="mt-9 flex flex-wrap items-center gap-5">
-                <RollButton
-                  text="Empezar un proyecto"
-                  href="https://cal.com/contacto-conectados-hjslxl/30min"
-                  variant="accent"
-                  size="lg"
-                  calLink="contacto-conectados-hjslxl/30min"
-                />
-                {hasCases && (
-                  <RollButton text="Ver proyectos" href="#casos-pilar" variant="ghost-light" size="lg" />
+                <Reveal eager delay={140}>
+                  <span className="block text-[13px] text-[#3355FF]/70 font-medium tracking-wide mb-3">
+                    Pilares / {pillar.title}
+                  </span>
+                  <h1
+                    className="font-medium text-gray-900 leading-[1.1] tracking-[-0.03em] max-w-lg"
+                    style={{ fontSize: 'clamp(1.9rem, 4.4vw, 3.1rem)' }}
+                  >
+                    {pillar.heroHighlight
+                      ? pillar.tagline.split(pillar.heroHighlight).map((part, i, arr) => (
+                          <span key={i}>
+                            {part}
+                            {i < arr.length - 1 && (
+                              <span className="text-[#3355FF]">{pillar.heroHighlight}</span>
+                            )}
+                          </span>
+                        ))
+                      : pillar.tagline}
+                  </h1>
+                  <p className="text-gray-600 text-[15px] sm:text-base leading-relaxed max-w-xl mt-6">
+                    {pillar.longDescription}
+                  </p>
+                </Reveal>
+
+                <Reveal eager delay={220} className="mt-9 flex flex-wrap items-center gap-5">
+                  <RollButton
+                    text="Empezar un proyecto"
+                    href="https://cal.com/contacto-conectados-hjslxl/30min"
+                    variant="accent"
+                    size="lg"
+                    calLink="contacto-conectados-hjslxl/30min"
+                  />
+                  {hasCases && (
+                    <RollButton text="Ver proyectos" href="#casos-pilar" variant="ghost" size="lg" />
+                  )}
+                </Reveal>
+              </div>
+
+              <Reveal eager delay={200}>
+                <div className="relative rounded-3xl bg-white border border-gray-100 shadow-[0_20px_60px_rgba(51,85,255,0.12)] p-4 sm:p-6 overflow-hidden">
+                  {pillar.heroImage && (
+                    <img
+                      src={pillar.heroImage}
+                      alt={pillar.title}
+                      className="w-full h-auto"
+                    />
+                  )}
+                </div>
+                {pillar.heroChecklist && (
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
+                    {pillar.heroChecklist.map((item) => (
+                      <div key={item} className="flex items-start gap-2.5">
+                        <span className="w-5 h-5 rounded-full bg-[#3355FF] flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <Check size={11} className="text-white" strokeWidth={3} />
+                        </span>
+                        <span className="text-[13.5px] text-gray-700 leading-snug">{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 )}
               </Reveal>
             </div>
-
-            {pillar.serviceDetails && (
-              <Reveal eager delay={260}>
-                <div className="relative aspect-[4/3] rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden">
-                  <Icon size={72} className="text-white/10" strokeWidth={1} />
-                  <span className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                </div>
-              </Reveal>
-            )}
           </div>
-        </div>
-      </header>
+        </header>
+      ) : (
+        <header className={`relative bg-gradient-to-br ${pillar.gradient} overflow-hidden`}>
+          <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 pt-24 sm:pt-28 pb-16 sm:pb-24">
+            <Reveal eager>
+              <Link
+                to="/#pilares"
+                className="inline-flex items-center gap-2 text-white/70 hover:text-white text-[13px] mb-10 sm:mb-14 transition-colors duration-300"
+              >
+                <ArrowLeft size={14} />
+                Volver a los pilares
+              </Link>
+            </Reveal>
+
+            <div className={pillar.serviceDetails ? 'grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-8 items-center' : ''}>
+              <div>
+                <Reveal eager delay={80}>
+                  <span className="w-14 h-14 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center mb-6">
+                    <Icon size={26} className="text-white" strokeWidth={1.6} />
+                  </span>
+                </Reveal>
+
+                <Reveal eager delay={140}>
+                  <span className="block text-[13px] text-white/60 tracking-wide mb-3">
+                    Pilares / {pillar.title}
+                  </span>
+                  <h1
+                    className="font-medium text-white leading-[1.1] tracking-[-0.03em] max-w-2xl"
+                    style={{ fontSize: 'clamp(1.9rem, 4.4vw, 3.1rem)' }}
+                  >
+                    {pillar.tagline}
+                  </h1>
+                  <p className="text-white/70 text-[15px] sm:text-base leading-relaxed max-w-xl mt-6">
+                    {pillar.longDescription}
+                  </p>
+                </Reveal>
+
+                <Reveal eager delay={220} className="mt-9 flex flex-wrap items-center gap-5">
+                  <RollButton
+                    text="Empezar un proyecto"
+                    href="https://cal.com/contacto-conectados-hjslxl/30min"
+                    variant="accent"
+                    size="lg"
+                    calLink="contacto-conectados-hjslxl/30min"
+                  />
+                  {hasCases && (
+                    <RollButton text="Ver proyectos" href="#casos-pilar" variant="ghost-light" size="lg" />
+                  )}
+                </Reveal>
+              </div>
+
+              {pillar.serviceDetails && (
+                <Reveal eager delay={260}>
+                  <div className="relative aspect-[4/3] rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden">
+                    <Icon size={72} className="text-white/10" strokeWidth={1} />
+                    <span className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  </div>
+                </Reveal>
+              )}
+            </div>
+          </div>
+        </header>
+      )}
 
       <section className="bg-white pt-16 sm:pt-20 pb-16 sm:pb-20">
         <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">

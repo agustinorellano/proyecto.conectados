@@ -64,6 +64,12 @@ export interface Pillar {
   cases?: PillarCase[];
   seoTitle: string;
   seoDescription: string;
+  /** Variante clara del hero (por ahora solo Comunicación Digital) */
+  heroTheme?: 'light';
+  /** Substring del tagline a resaltar en azul en la variante clara */
+  heroHighlight?: string;
+  heroImage?: string;
+  heroChecklist?: string[];
 }
 
 export const PILLARS: Pillar[] = [
@@ -303,6 +309,14 @@ export const PILLARS: Pillar[] = [
     seoTitle: 'Comunicación Digital: Redes Sociales y Contenido para Empresas',
     seoDescription:
       'Agencia de comunicación digital: identidad de marca, gestión de redes sociales, pauta y email marketing con una voz consistente.',
+    heroTheme: 'light',
+    heroHighlight: 'cualquier canal',
+    heroImage: '/comunicacion-digital-hero.png',
+    heroChecklist: [
+      'Identidad que refleja tu negocio',
+      'Contenido estratégico que conecta',
+      'Campañas que impulsan resultados',
+    ],
   },
   {
     slug: 'optimizacion',
