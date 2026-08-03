@@ -47,20 +47,11 @@ export function Hero() {
             </span>
           </Reveal>
           <h1
-            className="font-medium text-white leading-[1.08] tracking-[-0.03em]"
-            style={{ fontSize: 'clamp(1.75rem, 7vw, 4.2rem)' }}
+            className="font-medium text-white leading-[1.12] tracking-[-0.03em] max-w-3xl"
+            style={{ fontSize: 'clamp(1.9rem, 6.5vw, 5.5rem)' }}
           >
             <Reveal eager delay={80} as="span">
-              <span className="sm:hidden">
-                Las empresas que más crecen tienen algo en común: todo está conectado.
-              </span>
-              <span className="hidden sm:inline" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.2rem)' }}>
-                Las empresas que más crecen
-                <br />
-                tienen algo en común:
-                <br />
-                todo está conectado.
-              </span>
+              Conectamos lo que hace crecer tu negocio.
             </Reveal>
           </h1>
 
