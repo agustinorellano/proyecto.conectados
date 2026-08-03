@@ -1,4 +1,4 @@
-import { Search, Compass, PenTool, RefreshCw } from 'lucide-react';
+import { Search, Compass, PenTool, RefreshCw, ArrowRight } from 'lucide-react';
 import { RollButton } from './RollButton';
 import { Reveal } from './Reveal';
 
@@ -6,70 +6,133 @@ const HIGHLIGHTS = [
   {
     icon: Search,
     title: 'Investigación',
-    description: 'Entendemos tu negocio antes de proponer nada.',
+    description: 'Entendemos tu negocio, tu mercado y tu audiencia antes de proponer nada.',
+    color: '#3355FF',
+    bg: '#EEF2FF',
   },
   {
     icon: Compass,
     title: 'Estrategia',
     description: 'Definimos un plan claro, no una lista de tareas sueltas.',
+    color: '#7C3AED',
+    bg: '#F3EEFF',
   },
   {
     icon: PenTool,
     title: 'Diseño',
     description: 'Cada pieza piensa en cómo se usa, no solo en cómo se ve.',
+    color: '#10B981',
+    bg: '#EAFBF3',
   },
   {
     icon: RefreshCw,
     title: 'Iteración',
     description: 'Medimos y ajustamos después del lanzamiento, no solo antes.',
+    color: '#F97316',
+    bg: '#FFF1E6',
   },
 ];
 
 export function About() {
   return (
-    <section
-      id="estudio"
-      className="bg-white pt-16 sm:pt-20 lg:pt-32 pb-16 sm:pb-20 lg:pb-28 overflow-hidden"
-    >
-      <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
-        <Reveal className="flex items-center gap-3 mb-6 sm:mb-8">
-          <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-gray-900 text-white text-[11px] sm:text-xs font-semibold flex items-center justify-center">
-            1
-          </span>
-          <span className="text-xs sm:text-[13px] font-medium border border-gray-200 rounded-full px-3 sm:px-4 py-1 sm:py-1.5">
-            Presentamos Proyecto Conectados
-          </span>
-        </Reveal>
+    <section id="estudio" className="relative bg-[#F7F6F3] overflow-hidden">
+      <div className="relative bg-gradient-to-br from-[#0B1230] to-[#050814] pt-16 sm:pt-20 lg:pt-28 pb-24 sm:pb-32">
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
+          <Reveal className="flex items-center gap-3 mb-6 sm:mb-8">
+            <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white text-gray-900 text-[11px] sm:text-xs font-semibold flex items-center justify-center">
+              1
+            </span>
+            <span className="text-xs sm:text-[13px] font-medium border border-white/15 text-white/80 rounded-full px-3 sm:px-4 py-1 sm:py-1.5">
+              Presentamos Proyecto Conectados
+            </span>
+          </Reveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-          <div>
-            <Reveal delay={80}>
-              <h2
-                className="font-medium text-gray-900 leading-[1.12] tracking-[-0.02em] mb-6"
-                style={{ fontSize: 'clamp(1.5rem, 3.2vw, 2.6rem)' }}
-              >
-                Estrategia y ejecución en un solo equipo
-              </h2>
-              <p className="text-[15px] sm:text-lg leading-relaxed text-gray-600 max-w-md mb-8">
-                A través de investigación, diseño estratégico e iteración constante ayudamos a
-                empresas en crecimiento a alcanzar su potencial digital completo — con resultados
-                en cada uno de tus 4 pilares.
+          <Reveal delay={80}>
+            <h2
+              className="font-medium text-white leading-[1.12] tracking-[-0.02em] mb-6 max-w-xl"
+              style={{ fontSize: 'clamp(1.8rem, 3.6vw, 2.9rem)' }}
+            >
+              Estrategia y ejecución en <span className="text-[#7C93FF]">un solo equipo</span>
+            </h2>
+            <p className="text-[15px] sm:text-lg leading-relaxed text-white/60 max-w-md mb-8">
+              A través de investigación, diseño estratégico e iteración constante ayudamos a
+              empresas en crecimiento a alcanzar su potencial digital completo — con resultados en
+              cada uno de tus 4 pilares.
+            </p>
+            <RollButton
+              text="Conocé nuestro estudio"
+              href="/#contacto"
+              variant="ghost-light"
+              size="lg"
+            />
+          </Reveal>
+        </div>
+
+        <svg
+          viewBox="0 0 1440 100"
+          preserveAspectRatio="none"
+          className="absolute bottom-0 left-0 w-full h-[50px] sm:h-[90px] translate-y-px"
+        >
+          <path d="M0,100 C480,10 960,100 1440,30 L1440,100 L0,100 Z" fill="#F7F6F3" />
+        </svg>
+      </div>
+
+      <div className="relative max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 pt-8 sm:pt-10 pb-16 sm:pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-14 lg:gap-10 items-start">
+          <div className="flex flex-col-reverse sm:flex-row sm:items-end gap-6 sm:gap-4">
+            <Reveal delay={180} className="sm:w-[150px] flex-shrink-0">
+              <span className="text-4xl font-medium text-[#3355FF] leading-none">&ldquo;</span>
+              <p className="text-gray-900 text-base leading-snug -mt-2">
+                Trabajamos como un equipo interno, enfocados en lo que realmente hace crecer tu{' '}
+                <span className="text-[#3355FF] font-medium">negocio</span>.
               </p>
-              <RollButton text="Conocé nuestro estudio" href="#contacto" variant="ghost" size="lg" />
+              <span className="block w-6 h-0.5 bg-[#3355FF] mt-3" />
+            </Reveal>
+            <Reveal delay={100} className="flex-1 min-w-0">
+              <img
+                src="/personaje-conectados.png"
+                alt="Ilustración del equipo de Proyecto Conectados"
+                className="w-full max-w-[320px]"
+              />
             </Reveal>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+          <div className="relative">
+            <div className="absolute left-[27px] sm:left-[31px] top-2 bottom-2 w-px bg-gray-200" />
             {HIGHLIGHTS.map((h, i) => {
               const HIcon = h.icon;
               return (
-                <Reveal key={h.title} delay={140 + i * 70}>
-                  <div className="border border-gray-200 rounded-2xl p-6 h-full">
-                    <span className="w-11 h-11 rounded-xl bg-[#EEF2FF] flex items-center justify-center mb-5">
-                      <HIcon size={20} className="text-[#3355FF]" strokeWidth={1.6} />
+                <Reveal key={h.title} delay={140 + i * 90}>
+                  <div
+                    className={`relative flex items-center gap-5 sm:gap-6 py-6 ${
+                      i !== 0 ? 'border-t border-gray-200' : ''
+                    }`}
+                  >
+                    <span
+                      className="relative z-10 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center flex-shrink-0"
+                      style={{ backgroundColor: h.bg }}
+                    >
+                      <HIcon size={24} style={{ color: h.color }} strokeWidth={1.8} />
                     </span>
-                    <h3 className="text-[15px] font-semibold text-gray-900 mb-2">{h.title}</h3>
-                    <p className="text-[13.5px] text-gray-600 leading-relaxed">{h.description}</p>
+                    <span
+                      className="hidden sm:block font-medium leading-none flex-shrink-0"
+                      style={{ fontSize: 'clamp(2.2rem, 4vw, 3.2rem)', color: h.bg, WebkitTextStroke: `1.5px ${h.color}30` }}
+                    >
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-[15px] sm:text-base font-semibold text-gray-900 mb-1">
+                        {h.title}
+                      </h3>
+                      <p className="text-[13px] sm:text-[13.5px] text-gray-600 leading-relaxed">
+                        {h.description}
+                      </p>
+                    </div>
+                    <ArrowRight
+                      size={18}
+                      className="hidden sm:block flex-shrink-0"
+                      style={{ color: h.color }}
+                    />
                   </div>
                 </Reveal>
               );
