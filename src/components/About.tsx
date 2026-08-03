@@ -88,11 +88,11 @@ export function About() {
               </p>
               <span className="block w-6 h-0.5 bg-[#3355FF] mt-3" />
             </Reveal>
-            <Reveal delay={100} className="flex-1 min-w-0">
+            <Reveal delay={100} className="relative z-10 flex-1 min-w-0 -mt-12 sm:-mt-20">
               <img
                 src="/personaje-conectados.png"
                 alt="Ilustración del equipo de Proyecto Conectados"
-                className="w-full max-w-[420px] sm:max-w-[480px]"
+                className="w-full max-w-[320px] sm:max-w-[360px] mx-auto sm:mx-0"
               />
             </Reveal>
           </div>
