@@ -72,7 +72,7 @@ export const PILLARS: Pillar[] = [
     title: 'Desarrollo Web',
     tagline: 'Desarrollo web pensado para vender, escalar y automatizar',
     cardDescription:
-      'Sitios, e-commerce y apps a medida, rápidos y pensados para convertir visitas en clientes — como el que hicimos para Westur Viajes.',
+      'Sitios, e-commerce y apps a medida, rápidos y pensados para convertir visitas en clientes.',
     longDescription:
       'Diseñamos sitios, tiendas online y sistemas a medida que convierten visitas en clientes y optimizan procesos de tu negocio. No entregamos solo una plantilla bonita: entendemos tu negocio primero y construimos alrededor de cómo vendés.',
     services: [
@@ -140,19 +140,10 @@ export const PILLARS: Pillar[] = [
     gradient: 'from-[#3355FF] to-[#0E1A6B]',
     icon: Code2,
     dark: false,
-    cta: 'Ver caso',
+    cta: 'Ver más',
     seoTitle: 'Desarrollo Web para Empresas | Sitios, E-commerce y Sistemas a Medida',
     seoDescription:
-      'Diseño y desarrollo de sitios institucionales, e-commerce y sistemas a medida para empresas. Caso real: Westur Viajes.',
-    cases: [
-      {
-        name: 'Westur Viajes',
-        category: 'Agencia de viajes',
-        description:
-          'Sitio institucional y catálogo de paquetes con WhatsApp integrado, para una agencia de viajes familiar con más de 45 años de trayectoria en Buenos Aires.',
-        image: '/caso-westur.png',
-      },
-    ],
+      'Diseño y desarrollo de sitios institucionales, e-commerce y sistemas a medida para empresas, pensados para convertir visitas en clientes.',
   },
   {
     slug: 'soluciones-comerciales',
