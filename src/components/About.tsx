@@ -78,9 +78,9 @@ export function About() {
       </div>
 
       <div className="relative max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 pt-8 sm:pt-10 pb-16 sm:pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-14 lg:gap-10 items-start">
-          <div className="flex flex-col-reverse sm:flex-row sm:items-end gap-6 sm:gap-4">
-            <Reveal delay={180} className="sm:w-[150px] flex-shrink-0">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-14 lg:gap-10 items-start">
+          <div className="flex flex-col-reverse sm:flex-row sm:items-end gap-6 sm:gap-2">
+            <Reveal delay={180} className="sm:w-[160px] flex-shrink-0">
               <span className="text-4xl font-medium text-[#3355FF] leading-none">&ldquo;</span>
               <p className="text-gray-900 text-base leading-snug -mt-2">
                 Trabajamos como un equipo interno, enfocados en lo que realmente hace crecer tu{' '}
@@ -92,7 +92,7 @@ export function About() {
               <img
                 src="/personaje-conectados.png"
                 alt="Ilustración del equipo de Proyecto Conectados"
-                className="w-full max-w-[320px]"
+                className="w-full max-w-[420px] sm:max-w-[480px]"
               />
             </Reveal>
           </div>
@@ -108,6 +108,9 @@ export function About() {
                       i !== 0 ? 'border-t border-gray-200' : ''
                     }`}
                   >
+                    <span
+                      className="absolute left-[27px] sm:left-[31px] top-1/2 -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-[#3355FF] z-10"
+                    />
                     <span
                       className="relative z-10 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center flex-shrink-0"
                       style={{ backgroundColor: h.bg }}
