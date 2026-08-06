@@ -92,7 +92,7 @@ export function About() {
               <img
                 src="/personaje-conectados.png"
                 alt="Ilustración del equipo de Proyecto Conectados"
-                className="w-full max-w-[320px] sm:max-w-[360px] mx-auto sm:mx-0"
+                className="w-full max-w-[190px] sm:max-w-[360px] mx-auto sm:mx-0"
               />
             </Reveal>
           </div>
