@@ -20,7 +20,7 @@ export function CtaFooter() {
             encajen.
           </p>
         </Reveal>
-        <Reveal delay={200} className="flex justify-center">
+        <Reveal delay={200} className="flex flex-col items-center gap-5">
           <RollButton
             text="Agendar una llamada"
             href="https://cal.com/contacto-conectados-hjslxl/30min"
@@ -28,6 +28,12 @@ export function CtaFooter() {
             size="lg"
             calLink="contacto-conectados-hjslxl/30min"
           />
+          <a
+            href="mailto:contacto@proyectoconectados.com"
+            className="text-white/50 hover:text-white text-[13px] transition-colors duration-300"
+          >
+            contacto@proyectoconectados.com
+          </a>
         </Reveal>
       </section>
 
@@ -37,6 +43,12 @@ export function CtaFooter() {
             <LogoBadge className="w-8 h-8" />
             <span className="text-white text-sm font-medium">Proyecto Conectados</span>
           </div>
+          <a
+            href="mailto:contacto@proyectoconectados.com"
+            className="text-white/40 hover:text-white/70 text-xs transition-colors duration-300"
+          >
+            contacto@proyectoconectados.com
+          </a>
           <p className="text-white/40 text-xs">© 2026 Proyecto Conectados. Todos los derechos reservados.</p>
         </div>
       </footer>

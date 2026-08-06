@@ -75,9 +75,6 @@ export function Hero() {
               <span className="text-[13px] sm:text-sm font-medium text-gray-900">
                 4 pilares, un solo equipo
               </span>
-              <span className="text-[10px] sm:text-[11px] bg-gray-900 text-white px-1.5 sm:px-2 py-0.5 rounded">
-                +40 proyectos
-              </span>
             </div>
           </Reveal>
         </div>
