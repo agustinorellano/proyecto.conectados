@@ -78,24 +78,15 @@ export function About() {
       </div>
 
       <div className="relative max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 pt-8 sm:pt-10 pb-16 sm:pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-14 lg:gap-10 items-start">
-          <div className="flex flex-col-reverse sm:flex-row sm:items-end gap-6 sm:gap-2">
-            <Reveal delay={180} className="sm:w-[160px] flex-shrink-0">
-              <span className="text-4xl font-medium text-[#3355FF] leading-none">&ldquo;</span>
-              <p className="text-gray-900 text-base leading-snug -mt-2">
-                Trabajamos como un equipo interno, enfocados en lo que realmente hace crecer tu{' '}
-                <span className="text-[#3355FF] font-medium">negocio</span>.
-              </p>
-              <span className="block w-6 h-0.5 bg-[#3355FF] mt-3" />
-            </Reveal>
-            <Reveal delay={100} className="relative z-10 flex-1 min-w-0 -mt-12 sm:-mt-20">
-              <img
-                src="/personaje-conectados.png"
-                alt="Ilustración del equipo de Proyecto Conectados"
-                className="w-full max-w-[190px] sm:max-w-[360px] mx-auto sm:mx-0"
-              />
-            </Reveal>
-          </div>
+        <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-14 lg:gap-10 items-start">
+          <Reveal delay={100} className="max-w-[220px]">
+            <span className="text-4xl font-medium text-[#3355FF] leading-none">&ldquo;</span>
+            <p className="text-gray-900 text-base leading-snug -mt-2">
+              Trabajamos como un equipo interno, enfocados en lo que realmente hace crecer tu{' '}
+              <span className="text-[#3355FF] font-medium">negocio</span>.
+            </p>
+            <span className="block w-6 h-0.5 bg-[#3355FF] mt-3" />
+          </Reveal>
 
           <div className="relative">
             <div className="absolute left-[27px] sm:left-[31px] top-2 bottom-2 w-px bg-gray-200" />
