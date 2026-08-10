@@ -74,6 +74,93 @@ export interface Pillar {
 
 export const PILLARS: Pillar[] = [
   {
+    slug: 'comunicacion-digital',
+    title: 'Comunicación Digital',
+    tagline: 'Una marca que se reconoce en cualquier canal',
+    cardDescription:
+      'Marca, contenido y redes con una voz consistente que hace crecer tu presencia digital.',
+    longDescription:
+      'Construimos una identidad y una forma de comunicar que se sostiene en el tiempo, no solo una tanda de posteos. Marca, contenido y pauta trabajando en la misma dirección.',
+    services: [
+      'Identidad de marca y contenido',
+      'Redes sociales y pauta digital',
+      'Email marketing y comunicación',
+      'Calendario editorial',
+    ],
+    serviceDetails: [
+      {
+        icon: Palette,
+        title: 'Identidad de marca y contenido',
+        description:
+          'Definimos una identidad visual y un tono de comunicación que se sostienen en todos tus canales.',
+      },
+      {
+        icon: Share2,
+        title: 'Redes sociales y pauta digital',
+        description: 'Gestionamos tus redes y campañas pagas con foco en resultados, no solo en likes.',
+      },
+      {
+        icon: Mail,
+        title: 'Email marketing y comunicación',
+        description:
+          'Diseñamos secuencias de email que acompañan al cliente desde que te conoce hasta que compra.',
+      },
+      {
+        icon: Calendar,
+        title: 'Calendario editorial',
+        description:
+          'Planificamos el contenido con anticipación, para que la comunicación nunca dependa de la improvisación.',
+      },
+    ],
+    process: [
+      {
+        icon: Search,
+        title: 'Descubrimos tu marca',
+        description: 'Entendemos quién sos, a quién le hablás y qué te diferencia.',
+      },
+      {
+        icon: Compass,
+        title: 'Definimos la estrategia',
+        description: 'Armamos el mensaje, el tono y los canales prioritarios.',
+      },
+      {
+        icon: Pencil,
+        title: 'Creamos',
+        description: 'Producimos el contenido y las piezas de comunicación.',
+      },
+      {
+        icon: Send,
+        title: 'Publicamos',
+        description: 'Activamos el calendario editorial y la pauta digital.',
+      },
+      {
+        icon: BarChart3,
+        title: 'Medimos',
+        description: 'Revisamos qué funciona y qué no, con datos reales.',
+      },
+      {
+        icon: Headphones,
+        title: 'Acompañamos',
+        description: 'Ajustamos la estrategia mes a mes según los resultados.',
+      },
+    ],
+    gradient: 'from-[#5C7CFF] to-[#3355FF]',
+    icon: Megaphone,
+    dark: false,
+    cta: 'Ver más',
+    seoTitle: 'Comunicación Digital: Redes Sociales y Contenido para Empresas',
+    seoDescription:
+      'Agencia de comunicación digital: identidad de marca, gestión de redes sociales, pauta y email marketing con una voz consistente.',
+    heroTheme: 'light',
+    heroHighlight: 'cualquier canal',
+    heroImage: '/comunicacion-digital-hero.png',
+    heroChecklist: [
+      'Identidad que refleja tu negocio',
+      'Contenido estratégico que conecta',
+      'Campañas que impulsan resultados',
+    ],
+  },
+  {
     slug: 'desarrollo-web',
     title: 'Desarrollo Web',
     tagline: 'Desarrollo web pensado para vender, escalar y automatizar',
@@ -230,93 +317,6 @@ export const PILLARS: Pillar[] = [
     seoTitle: 'Soluciones Comerciales: CRM y Automatización de Ventas para Empresas',
     seoDescription:
       'Consultoría de procesos comerciales, CRM, automatización y funnels de venta para que tu equipo no pierda oportunidades.',
-  },
-  {
-    slug: 'comunicacion-digital',
-    title: 'Comunicación Digital',
-    tagline: 'Una marca que se reconoce en cualquier canal',
-    cardDescription:
-      'Marca, contenido y redes con una voz consistente que hace crecer tu presencia digital.',
-    longDescription:
-      'Construimos una identidad y una forma de comunicar que se sostiene en el tiempo, no solo una tanda de posteos. Marca, contenido y pauta trabajando en la misma dirección.',
-    services: [
-      'Identidad de marca y contenido',
-      'Redes sociales y pauta digital',
-      'Email marketing y comunicación',
-      'Calendario editorial',
-    ],
-    serviceDetails: [
-      {
-        icon: Palette,
-        title: 'Identidad de marca y contenido',
-        description:
-          'Definimos una identidad visual y un tono de comunicación que se sostienen en todos tus canales.',
-      },
-      {
-        icon: Share2,
-        title: 'Redes sociales y pauta digital',
-        description: 'Gestionamos tus redes y campañas pagas con foco en resultados, no solo en likes.',
-      },
-      {
-        icon: Mail,
-        title: 'Email marketing y comunicación',
-        description:
-          'Diseñamos secuencias de email que acompañan al cliente desde que te conoce hasta que compra.',
-      },
-      {
-        icon: Calendar,
-        title: 'Calendario editorial',
-        description:
-          'Planificamos el contenido con anticipación, para que la comunicación nunca dependa de la improvisación.',
-      },
-    ],
-    process: [
-      {
-        icon: Search,
-        title: 'Descubrimos tu marca',
-        description: 'Entendemos quién sos, a quién le hablás y qué te diferencia.',
-      },
-      {
-        icon: Compass,
-        title: 'Definimos la estrategia',
-        description: 'Armamos el mensaje, el tono y los canales prioritarios.',
-      },
-      {
-        icon: Pencil,
-        title: 'Creamos',
-        description: 'Producimos el contenido y las piezas de comunicación.',
-      },
-      {
-        icon: Send,
-        title: 'Publicamos',
-        description: 'Activamos el calendario editorial y la pauta digital.',
-      },
-      {
-        icon: BarChart3,
-        title: 'Medimos',
-        description: 'Revisamos qué funciona y qué no, con datos reales.',
-      },
-      {
-        icon: Headphones,
-        title: 'Acompañamos',
-        description: 'Ajustamos la estrategia mes a mes según los resultados.',
-      },
-    ],
-    gradient: 'from-[#5C7CFF] to-[#3355FF]',
-    icon: Megaphone,
-    dark: false,
-    cta: 'Ver más',
-    seoTitle: 'Comunicación Digital: Redes Sociales y Contenido para Empresas',
-    seoDescription:
-      'Agencia de comunicación digital: identidad de marca, gestión de redes sociales, pauta y email marketing con una voz consistente.',
-    heroTheme: 'light',
-    heroHighlight: 'cualquier canal',
-    heroImage: '/comunicacion-digital-hero.png',
-    heroChecklist: [
-      'Identidad que refleja tu negocio',
-      'Contenido estratégico que conecta',
-      'Campañas que impulsan resultados',
-    ],
   },
   {
     slug: 'optimizacion',
