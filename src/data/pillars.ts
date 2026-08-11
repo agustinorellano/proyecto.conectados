@@ -240,6 +240,7 @@ export const PILLARS: Pillar[] = [
     seoTitle: 'Desarrollo Web para Empresas | Sitios, E-commerce y Sistemas a Medida',
     seoDescription:
       'Diseño y desarrollo de sitios institucionales, e-commerce y sistemas a medida para empresas, pensados para convertir visitas en clientes.',
+    cardImage: '/desarrollo-web-card.png',
   },
   {
     slug: 'soluciones-comerciales',
