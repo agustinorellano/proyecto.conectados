@@ -48,7 +48,7 @@ export function Hero() {
           </Reveal>
           <h1
             className="font-medium text-white leading-[1.12] tracking-[-0.03em] max-w-3xl"
-            style={{ fontSize: 'clamp(1.9rem, 6.5vw, 5.5rem)' }}
+            style={{ fontSize: 'clamp(1.75rem, 5.2vw, 4.4rem)' }}
           >
             <Reveal eager delay={80} as="span">
               Conectamos lo que hace crecer tu negocio.
