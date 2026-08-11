@@ -7,29 +7,21 @@ const HIGHLIGHTS = [
     icon: Search,
     title: 'Investigación',
     description: 'Entendemos tu negocio, tu mercado y tu audiencia antes de proponer nada.',
-    color: '#3355FF',
-    bg: '#EEF2FF',
   },
   {
     icon: Compass,
     title: 'Estrategia',
     description: 'Definimos un plan claro, no una lista de tareas sueltas.',
-    color: '#7C3AED',
-    bg: '#F3EEFF',
   },
   {
     icon: PenTool,
     title: 'Diseño',
     description: 'Cada pieza piensa en cómo se usa, no solo en cómo se ve.',
-    color: '#10B981',
-    bg: '#EAFBF3',
   },
   {
     icon: RefreshCw,
     title: 'Iteración',
     description: 'Medimos y ajustamos después del lanzamiento, no solo antes.',
-    color: '#F97316',
-    bg: '#FFF1E6',
   },
 ];
 
@@ -99,20 +91,12 @@ export function About() {
                       i !== 0 ? 'border-t border-gray-200' : ''
                     }`}
                   >
-                    <span
-                      className="absolute left-[27px] sm:left-[31px] top-1/2 -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-[#3355FF] z-10"
-                    />
-                    <span
-                      className="relative z-10 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center flex-shrink-0"
-                      style={{ backgroundColor: h.bg }}
-                    >
-                      <HIcon size={24} style={{ color: h.color }} strokeWidth={1.8} />
-                    </span>
-                    <span
-                      className="hidden sm:block font-medium leading-none flex-shrink-0"
-                      style={{ fontSize: 'clamp(2.2rem, 4vw, 3.2rem)', color: h.bg, WebkitTextStroke: `1.5px ${h.color}30` }}
-                    >
-                      {String(i + 1).padStart(2, '0')}
+                    <span className="absolute left-[27px] sm:left-[31px] top-1/2 -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-[#3355FF] z-10" />
+                    <span className="relative z-10 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#EEF2FF] flex items-center justify-center flex-shrink-0">
+                      <HIcon size={24} className="text-[#3355FF]" strokeWidth={1.8} />
+                      <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#3355FF] text-white text-[10px] font-semibold flex items-center justify-center">
+                        {i + 1}
+                      </span>
                     </span>
                     <div className="flex-1 min-w-0">
                       <h3 className="text-[15px] sm:text-base font-semibold text-gray-900 mb-1">
@@ -122,11 +106,7 @@ export function About() {
                         {h.description}
                       </p>
                     </div>
-                    <ArrowRight
-                      size={18}
-                      className="hidden sm:block flex-shrink-0"
-                      style={{ color: h.color }}
-                    />
+                    <ArrowRight size={18} className="hidden sm:block flex-shrink-0 text-[#3355FF]" />
                   </div>
                 </Reveal>
               );
