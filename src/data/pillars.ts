@@ -70,6 +70,8 @@ export interface Pillar {
   heroHighlight?: string;
   heroImage?: string;
   heroChecklist?: string[];
+  /** Imagen de portada para la card del pilar en la grilla de la home */
+  cardImage?: string;
 }
 
 export const PILLARS: Pillar[] = [
@@ -159,6 +161,7 @@ export const PILLARS: Pillar[] = [
       'Contenido estratégico que conecta',
       'Campañas que impulsan resultados',
     ],
+    cardImage: '/comunicacion-digital-card.png',
   },
   {
     slug: 'desarrollo-web',

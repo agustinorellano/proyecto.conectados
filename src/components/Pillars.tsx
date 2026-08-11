@@ -33,9 +33,22 @@ export function Pillars() {
               <Reveal key={p.slug} delay={120 + i * 90}>
                 <Link to={`/pilares/${p.slug}`} className="group cursor-pointer block">
                   <div
-                    className={`relative aspect-[329/246] rounded-2xl overflow-hidden flex items-center justify-center bg-gradient-to-br ${p.gradient}`}
+                    className={`relative aspect-[329/246] rounded-2xl overflow-hidden flex items-center justify-center ${
+                      p.cardImage ? 'bg-gray-900' : `bg-gradient-to-br ${p.gradient}`
+                    }`}
                   >
-                    <Icon size={48} className="text-white/25" strokeWidth={1.4} />
+                    {p.cardImage ? (
+                      <>
+                        <img
+                          src={p.cardImage}
+                          alt={`Portada de ${p.title}`}
+                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0" />
+                      </>
+                    ) : (
+                      <Icon size={48} className="text-white/25" strokeWidth={1.4} />
+                    )}
                     <ExpandButton
                       label={p.cta}
                       dark={p.dark}
