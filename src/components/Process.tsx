@@ -5,22 +5,25 @@ const STEPS = [
   {
     icon: Search,
     title: 'Diagnóstico',
-    description: 'Analizamos tu negocio y detectamos qué pilares necesita para crecer.',
+    description:
+      'Te devolvemos un diagnóstico con las oportunidades concretas para tu negocio — sin costo, sin compromiso.',
+    cta: 'Agendar esta llamada',
   },
   {
     icon: Compass,
     title: 'Estrategia',
-    description: 'Armamos un plan con el alcance, los tiempos y los pilares indicados.',
+    description:
+      'Te armamos un plan con el alcance y los pilares indicados, para que sepas exactamente qué vas a recibir.',
   },
   {
     icon: Rocket,
     title: 'Ejecución',
-    description: 'Trabajamos en sprints con avances visibles desde la primera semana.',
+    description: 'Vas viendo avances reales desde la primera semana, no recién al final.',
   },
   {
     icon: RefreshCw,
     title: 'Optimización continua',
-    description: 'Medimos resultados y seguimos ajustando después del lanzamiento.',
+    description: 'Te compartimos los resultados medidos y seguimos ajustando junto con vos.',
   },
 ];
 
@@ -66,10 +69,27 @@ export function Process() {
                 <p className="text-white/55 text-sm sm:text-[15px] leading-relaxed max-w-[240px] mx-auto">
                   {step.description}
                 </p>
+                {step.cta && (
+                  <a
+                    href="https://cal.com/contacto-conectados-hjslxl/30min"
+                    data-cal-link="contacto-conectados-hjslxl/30min"
+                    data-cal-namespace="30min"
+                    data-cal-config='{"layout":"month_view"}'
+                    className="inline-block mt-3 text-[13px] font-medium text-[#7C93FF] hover:text-white transition-colors duration-300"
+                  >
+                    {step.cta} →
+                  </a>
+                )}
               </Reveal>
             );
           })}
         </div>
+
+        <Reveal delay={420} className="text-center mt-16 sm:mt-20">
+          <p className="text-white/40 text-sm sm:text-[15px]">
+            De la llamada al lanzamiento, sin sorpresas en el medio.
+          </p>
+        </Reveal>
       </div>
     </section>
   );
