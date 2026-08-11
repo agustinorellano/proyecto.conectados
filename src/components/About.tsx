@@ -28,7 +28,7 @@ const HIGHLIGHTS = [
 export function About() {
   return (
     <section id="estudio" className="relative bg-[#F7F6F3] overflow-hidden">
-      <div className="relative bg-gradient-to-br from-[#0B1230] to-[#050814] pt-16 sm:pt-20 lg:pt-28 pb-24 sm:pb-32">
+      <div className="relative bg-gradient-to-br from-[#0B1230] to-[#050814] pt-16 sm:pt-20 lg:pt-28 pb-14 sm:pb-16">
         <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
           <Reveal className="flex items-center gap-3 mb-6 sm:mb-8">
             <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white text-gray-900 text-[11px] sm:text-xs font-semibold flex items-center justify-center">
@@ -69,7 +69,7 @@ export function About() {
         </svg>
       </div>
 
-      <div className="relative max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 pt-8 sm:pt-10 pb-16 sm:pb-24">
+      <div className="relative max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 pt-2 sm:pt-4 pb-16 sm:pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-14 lg:gap-10 items-start">
           <Reveal delay={100} className="max-w-[220px]">
             <span className="text-4xl font-medium text-[#3355FF] leading-none">&ldquo;</span>
