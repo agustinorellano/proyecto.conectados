@@ -321,6 +321,7 @@ export const PILLARS: Pillar[] = [
     seoTitle: 'Soluciones Comerciales: CRM y Automatización de Ventas para Empresas',
     seoDescription:
       'Consultoría de procesos comerciales, CRM, automatización y funnels de venta para que tu equipo no pierda oportunidades.',
+    cardImage: '/soluciones-comerciales-card.png',
   },
   {
     slug: 'optimizacion',
