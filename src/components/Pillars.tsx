@@ -30,35 +30,40 @@ export function Pillars() {
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8 px-5 sm:px-8 lg:px-12">
-          {featured.map((p, i) => (
-            <Reveal key={p.slug} delay={120 + i * 90}>
-              <Link to={`/pilares/${p.slug}`} className="group cursor-pointer block">
-                <div className="relative aspect-[4/5] sm:aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br from-[#0B1230] to-[#050814]">
-                  {p.cardImage && (
-                    <img
-                      src={p.cardImage}
-                      alt={`Portada de ${p.title}`}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          {featured.map((p, i) => {
+            const Icon = p.icon;
+            return (
+              <Reveal key={p.slug} delay={120 + i * 90}>
+                <Link to={`/pilares/${p.slug}`} className="group cursor-pointer block">
+                  <div
+                    className={`relative aspect-[4/5] sm:aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br ${p.gradient} p-6 sm:p-8 flex flex-col`}
+                  >
+                    <Icon
+                      size={220}
+                      strokeWidth={1}
+                      className="absolute -right-10 -bottom-10 text-white/10 pointer-events-none transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-3"
                     />
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
-                    <p className="text-white/60 text-[13px] sm:text-sm leading-relaxed mb-3 max-w-[38ch]">
-                      {p.cardDescription}
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-white text-xl sm:text-2xl font-semibold tracking-[-0.01em]">
+
+                    <span className="relative w-11 h-11 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center mb-auto">
+                      <Icon size={20} className="text-white" strokeWidth={1.6} />
+                    </span>
+
+                    <div className="relative">
+                      <h3 className="text-white text-2xl sm:text-3xl font-semibold tracking-[-0.02em] mb-3 leading-[1.1]">
                         {p.title}
                       </h3>
-                      <span className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1">
+                      <p className="text-white/70 text-[13px] sm:text-sm leading-relaxed max-w-[34ch] mb-5">
+                        {p.cardDescription}
+                      </p>
+                      <span className="inline-flex w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white items-center justify-center transition-transform duration-300 group-hover:translate-x-1">
                         <ArrowRight size={16} className="text-gray-900" />
                       </span>
                     </div>
                   </div>
-                </div>
-              </Link>
-            </Reveal>
-          ))}
+                </Link>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>
