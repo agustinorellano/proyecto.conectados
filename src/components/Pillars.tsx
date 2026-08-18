@@ -32,11 +32,8 @@ export function Pillars() {
             return (
               <Reveal key={p.slug} delay={120 + i * 90}>
                 <Link to={`/pilares/${p.slug}`} className="group cursor-pointer block">
-                  <div
-                    className={`relative aspect-[329/246] rounded-2xl overflow-hidden flex items-center justify-center ${
-                      p.cardImage ? 'bg-gray-900' : `bg-gradient-to-br ${p.gradient}`
-                    }`}
-                  >
+                  <div className="relative aspect-[329/246] rounded-2xl overflow-hidden flex items-center justify-center bg-gradient-to-br from-[#0B1230] to-[#050814]">
+
                     {p.cardImage ? (
                       <>
                         <img
