@@ -39,7 +39,7 @@ export function WhyUs() {
         <Reveal delay={120}>
           <div
             className="relative h-[340px] sm:h-[400px] lg:h-[440px] rounded-2xl overflow-hidden bg-cover"
-            style={{ backgroundImage: "url('/fondo-animado-azul.png')", backgroundPosition: '82% center' }}
+            style={{ backgroundImage: "url('/fondo-animado-azul.png')", backgroundPosition: 'center' }}
           />
         </Reveal>
       </div>
