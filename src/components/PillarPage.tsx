@@ -19,9 +19,9 @@ export function PillarPage() {
 
   useDocumentMeta({
     title: pillar
-      ? `${pillar.seoTitle} | Proyecto Conectados`
-      : 'Proyecto Conectados',
-    description: pillar ? pillar.seoDescription : 'Agencia con 4 pilares para hacer crecer tu empresa.',
+      ? `${pillar.seoTitle} | Conectado.`
+      : 'Conectado.',
+    description: pillar ? pillar.seoDescription : 'Agencia de desarrollo web y comunicación digital para empresas.',
   });
 
   if (!pillar) {

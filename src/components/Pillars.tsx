@@ -1,10 +1,13 @@
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { ExpandButton } from './ExpandButton';
 import { Reveal } from './Reveal';
 import { PILLARS } from '../data/pillars';
 
+const FEATURED_SLUGS = ['comunicacion-digital', 'desarrollo-web'];
+
 export function Pillars() {
+  const featured = PILLARS.filter((p) => FEATURED_SLUGS.includes(p.slug));
+
   return (
     <section id="pilares" className="bg-[#F5F5F5] pt-16 sm:pt-20 lg:pt-28 pb-16 sm:pb-20 lg:pb-28">
       <div className="max-w-[1440px] mx-auto">
@@ -13,7 +16,7 @@ export function Pillars() {
             2
           </span>
           <span className="text-xs sm:text-[13px] font-medium border border-gray-300 rounded-full px-3 sm:px-4 py-1 sm:py-1.5">
-            Los 4 pilares de Proyecto Conectados
+            Servicios
           </span>
         </Reveal>
 
@@ -22,52 +25,40 @@ export function Pillars() {
             className="font-medium text-gray-900 leading-[1.08] tracking-[-0.03em] px-5 sm:px-8 lg:px-12 mb-10 sm:mb-14 lg:mb-16"
             style={{ fontSize: 'clamp(1.75rem, 7vw, 4.2rem)' }}
           >
-            Todo lo que tu empresa necesita
+            Lo que hacemos crecer, hoy
           </h2>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-7 px-5 sm:px-8 lg:px-12">
-          {PILLARS.map((p, i) => {
-            const Icon = p.icon;
-            return (
-              <Reveal key={p.slug} delay={120 + i * 90}>
-                <Link to={`/pilares/${p.slug}`} className="group cursor-pointer block">
-                  <div className="relative aspect-[329/246] rounded-2xl overflow-hidden flex items-center justify-center bg-gradient-to-br from-[#0B1230] to-[#050814]">
-
-                    {p.cardImage ? (
-                      <>
-                        <img
-                          src={p.cardImage}
-                          alt={`Portada de ${p.title}`}
-                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0" />
-                      </>
-                    ) : (
-                      <Icon size={48} className="text-white/25" strokeWidth={1.4} />
-                    )}
-                    <ExpandButton
-                      label={p.cta}
-                      dark={p.dark}
-                      widthClass="group-hover:w-[148px]"
-                      icon={
-                        <ArrowRight
-                          size={14}
-                          className={p.dark ? 'text-white' : 'text-gray-900'}
-                        />
-                      }
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8 px-5 sm:px-8 lg:px-12">
+          {featured.map((p, i) => (
+            <Reveal key={p.slug} delay={120 + i * 90}>
+              <Link to={`/pilares/${p.slug}`} className="group cursor-pointer block">
+                <div className="relative aspect-[4/5] sm:aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br from-[#0B1230] to-[#050814]">
+                  {p.cardImage && (
+                    <img
+                      src={p.cardImage}
+                      alt={`Portada de ${p.title}`}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+                    <p className="text-white/60 text-[13px] sm:text-sm leading-relaxed mb-3 max-w-[38ch]">
+                      {p.cardDescription}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-white text-xl sm:text-2xl font-semibold tracking-[-0.01em]">
+                        {p.title}
+                      </h3>
+                      <span className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1">
+                        <ArrowRight size={16} className="text-gray-900" />
+                      </span>
+                    </div>
                   </div>
-                  <p className="text-[13px] sm:text-sm text-gray-600 mt-4 leading-relaxed">
-                    {p.cardDescription}
-                  </p>
-                  <p className="text-sm sm:text-[15px] font-semibold text-gray-900 mt-1">
-                    {p.title}
-                  </p>
-                </Link>
-              </Reveal>
-            );
-          })}
+                </div>
+              </Link>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

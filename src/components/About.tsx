@@ -35,7 +35,7 @@ export function About() {
               1
             </span>
             <span className="text-xs sm:text-[13px] font-medium border border-white/15 text-white/80 rounded-full px-3 sm:px-4 py-1 sm:py-1.5">
-              Presentamos Proyecto Conectados
+              Presentamos Conectado.
             </span>
           </Reveal>
 
@@ -48,8 +48,8 @@ export function About() {
             </h2>
             <p className="text-[15px] sm:text-lg leading-relaxed text-white/60 max-w-md mb-8">
               A través de investigación, diseño estratégico e iteración constante ayudamos a
-              empresas en crecimiento a alcanzar su potencial digital completo — con resultados en
-              cada uno de tus 4 pilares.
+              empresas en crecimiento a alcanzar su potencial digital completo — con resultados
+              concretos en cada proyecto.
             </p>
             <RollButton
               text="Conocé nuestro estudio"

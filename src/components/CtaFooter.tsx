@@ -45,11 +45,11 @@ export function CtaFooter() {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <LogoBadge className="w-9 h-9" />
-                <span className="text-white text-[15px] font-medium">Proyecto Conectados</span>
+                <span className="text-white text-[15px] font-medium">Conectado.</span>
               </div>
               <p className="text-white/40 text-[13px] leading-relaxed max-w-[260px]">
-                Agencia con 4 pilares: desarrollo web, soluciones comerciales, comunicación
-                digital y optimización. Todo lo que tu empresa necesita, en un solo equipo.
+                Agencia de desarrollo web y comunicación digital para empresas que quieren crecer
+                online, con un solo equipo detrás de cada proyecto.
               </p>
             </div>
 
@@ -106,7 +106,7 @@ export function CtaFooter() {
 
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6">
             <p className="text-white/40 text-xs">
-              © 2026 Proyecto Conectados. Todos los derechos reservados.
+              © 2026 Conectado. Todos los derechos reservados.
             </p>
             <p className="text-white/30 text-xs">Buenos Aires, Argentina</p>
           </div>

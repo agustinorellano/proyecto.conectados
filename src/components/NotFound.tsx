@@ -5,7 +5,7 @@ import { useDocumentMeta } from '../hooks/useDocumentMeta';
 
 export function NotFound() {
   useDocumentMeta({
-    title: 'Página no encontrada | Proyecto Conectados',
+    title: 'Página no encontrada | Conectado.',
     description: 'La página que buscás no existe o se movió de lugar.',
   });
 

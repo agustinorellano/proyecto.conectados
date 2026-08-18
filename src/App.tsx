@@ -9,9 +9,9 @@ import { useDocumentMeta } from './hooks/useDocumentMeta';
 
 function App() {
   useDocumentMeta({
-    title: 'Proyecto Conectados | Agencia de Desarrollo Web y Marketing Digital para Empresas',
+    title: 'Conectado. | Agencia de Desarrollo Web y Comunicación Digital para Empresas',
     description:
-      'Agencia con 4 pilares: desarrollo web, soluciones comerciales, comunicación digital y optimización. Todo lo que tu empresa necesita para crecer, en un solo equipo.',
+      'Agencia de desarrollo web y comunicación digital para empresas que quieren crecer online, con un solo equipo detrás de cada proyecto.',
   });
 
   return (

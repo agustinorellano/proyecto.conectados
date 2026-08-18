@@ -14,7 +14,7 @@ export function WhyUs() {
           >
             ¿Por qué elegir
             <br />
-            Proyecto Conectados?
+            Conectado.?
           </h2>
           <p className="text-gray-600 text-[15px] sm:text-lg leading-relaxed max-w-md mb-9">
             Tomamos la necesidad de tu negocio como propia. Cada proyecto es un desafío distinto,
@@ -31,7 +31,7 @@ export function WhyUs() {
             <div className="inline-flex items-center gap-3 bg-white rounded-[4px] px-3 py-2 border border-gray-200">
               <LogoMark className="w-5 h-5 text-[#3355FF]" />
               <span className="text-[13px] sm:text-sm font-medium text-gray-900">
-                Un solo equipo, 4 pilares
+                Un solo equipo, sin intermediarios
               </span>
             </div>
           </div>
@@ -66,7 +66,7 @@ export function WhyUs() {
                 </defs>
                 <text fontSize="7.2" fill="#6b7280" letterSpacing="1.5">
                   <textPath href="#whyus-circle-path">
-                    PROYECTO CONECTADOS • AGENCIA INTEGRAL •
+                    CONECTADO. • AGENCIA DIGITAL •
                   </textPath>
                 </text>
               </svg>

@@ -43,7 +43,7 @@ export function Hero() {
         <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12 pb-14 sm:pb-16 lg:pb-20">
           <Reveal eager>
             <span className="block text-[13px] sm:text-sm text-white/70 tracking-wide mb-5 sm:mb-8">
-              Proyecto Conectados
+              Conectado.
             </span>
           </Reveal>
           <h1
@@ -73,7 +73,7 @@ export function Hero() {
             <div className="inline-flex items-center gap-3 bg-white rounded-[4px] px-3 py-2 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.12)] transition-shadow duration-300">
               <LogoMark className="w-5 h-5 sm:w-6 sm:h-6 text-[#3355FF]" />
               <span className="text-[13px] sm:text-sm font-medium text-gray-900">
-                4 pilares, un solo equipo
+                Un solo equipo, sin intermediarios
               </span>
             </div>
           </Reveal>
