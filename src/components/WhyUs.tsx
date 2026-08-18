@@ -1,4 +1,3 @@
-import { Rocket } from 'lucide-react';
 import { RollButton } from './RollButton';
 import { LogoMark } from './Logo';
 import { Reveal } from './Reveal';
@@ -38,48 +37,10 @@ export function WhyUs() {
         </Reveal>
 
         <Reveal delay={120}>
-          <div className="relative h-[340px] sm:h-[400px] lg:h-[440px] flex items-center justify-center">
-            <div
-              className="absolute w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] rounded-full"
-              style={{
-                right: '8%',
-                top: '4%',
-                background: 'linear-gradient(155deg, #5C7CFF, #1E2FB0)',
-              }}
-            />
-            <div
-              className="absolute w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] rounded-full"
-              style={{
-                right: '20%',
-                bottom: '6%',
-                background: 'radial-gradient(circle at 35% 30%, #141B45, #050814)',
-              }}
-            />
-
-            <div className="absolute left-[6%] top-[14%] w-[92px] h-[92px] sm:w-[104px] sm:h-[104px] rounded-full bg-white border border-gray-200 shadow-[0_8px_24px_rgba(15,23,42,0.1)] flex items-center justify-center">
-              <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full animate-[spin_16s_linear_infinite]">
-                <defs>
-                  <path
-                    id="whyus-circle-path"
-                    d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
-                  />
-                </defs>
-                <text fontSize="7.2" fill="#6b7280" letterSpacing="1.5">
-                  <textPath href="#whyus-circle-path">
-                    CONECTADO. • AGENCIA DIGITAL •
-                  </textPath>
-                </text>
-              </svg>
-              <LogoMark className="w-6 h-6 text-[#3355FF]" />
-            </div>
-
-            <div className="absolute right-[6%] bottom-[10%] w-16 h-16 sm:w-[72px] sm:h-[72px] rounded-full bg-white border border-gray-200 shadow-[0_8px_24px_rgba(15,23,42,0.1)] flex items-center justify-center">
-              <Rocket size={24} className="text-[#3355FF]" strokeWidth={1.6} />
-            </div>
-
-            <span className="absolute left-[2%] bottom-[18%] w-2.5 h-2.5 rounded-full bg-[#3355FF]/40" />
-            <span className="absolute right-[2%] top-[6%] w-2 h-2 rounded-full bg-[#3355FF]/30" />
-          </div>
+          <div
+            className="relative h-[340px] sm:h-[400px] lg:h-[440px] rounded-2xl overflow-hidden bg-cover"
+            style={{ backgroundImage: "url('/fondo-animado-azul.png')", backgroundPosition: '82% center' }}
+          />
         </Reveal>
       </div>
     </section>

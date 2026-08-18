@@ -10,8 +10,7 @@ const SHOW_HERO_SHADER = false;
 export function Hero() {
   return (
     <header
-      className="relative min-h-screen flex flex-col bg-[#050814] overflow-hidden bg-cover"
-      style={{ backgroundImage: "url('/fondo-animado-azul.png')", backgroundPosition: '75% center' }}
+      className="relative h-[70vh] min-h-[480px] sm:min-h-[560px] flex flex-col bg-gradient-to-br from-[#0B1230] to-[#050814] overflow-hidden"
     >
       {SHOW_HERO_SHADER && (
         <div className="absolute inset-0 z-10 pointer-events-none mix-blend-screen">
@@ -43,32 +42,18 @@ export function Hero() {
           </Shader>
         </div>
       )}
-      <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-[#050814] via-[#050814]/45 to-transparent" />
-      <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-[#050814]/95 via-[#050814]/55 to-transparent" />
-
       <div className="relative z-20 flex-1 flex flex-col justify-end pt-24 sm:pt-28">
         <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12 pb-14 sm:pb-16 lg:pb-20">
           <Reveal eager>
-            <span className="block text-[13px] sm:text-sm text-white/70 tracking-wide mb-5 sm:mb-8">
+            <span
+              className="block font-medium text-white leading-none tracking-[-0.03em]"
+              style={{ fontSize: 'clamp(2.2rem, 6vw, 4.8rem)' }}
+            >
               Conectado.
             </span>
           </Reveal>
-          <h1
-            className="font-medium text-white leading-[1.12] tracking-[-0.03em] max-w-3xl"
-            style={{ fontSize: 'clamp(1.75rem, 5.2vw, 4.4rem)' }}
-          >
-            <Reveal eager delay={80} as="span">
-              Conectamos lo que hace crecer tu negocio.
-            </Reveal>
-          </h1>
 
-          <Reveal eager delay={140}>
-            <p className="text-white/70 text-[15px] sm:text-lg leading-relaxed max-w-xl mt-5 sm:mt-7">
-              Nosotros hacemos que tu marca, tu web, tus campañas y tus datos trabajen juntos.
-            </p>
-          </Reveal>
-
-          <Reveal eager delay={200} className="mt-8 sm:mt-12 flex flex-col sm:flex-row gap-4 sm:gap-5">
+          <Reveal eager delay={140} className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4 sm:gap-5">
             <RollButton
               text="Empezar un proyecto"
               href="https://cal.com/contacto-conectados-hjslxl/30min"
