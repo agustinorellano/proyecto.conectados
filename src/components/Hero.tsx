@@ -10,8 +10,8 @@ const SHOW_HERO_SHADER = false;
 export function Hero() {
   return (
     <header
-      className="relative min-h-screen flex flex-col bg-[#050814] overflow-hidden bg-cover bg-center"
-      style={{ backgroundImage: "url('/fondo-animado-azul.png')" }}
+      className="relative min-h-screen flex flex-col bg-[#050814] overflow-hidden bg-cover"
+      style={{ backgroundImage: "url('/fondo-animado-azul.png')", backgroundPosition: '75% center' }}
     >
       {SHOW_HERO_SHADER && (
         <div className="absolute inset-0 z-10 pointer-events-none mix-blend-screen">
@@ -43,7 +43,8 @@ export function Hero() {
           </Shader>
         </div>
       )}
-      <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-[#050814] via-[#050814]/10 to-transparent" />
+      <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-[#050814] via-[#050814]/45 to-transparent" />
+      <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-[#050814]/95 via-[#050814]/55 to-transparent" />
 
       <div className="relative z-20 flex-1 flex flex-col justify-end pt-24 sm:pt-28">
         <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12 pb-14 sm:pb-16 lg:pb-20">

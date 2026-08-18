@@ -36,12 +36,13 @@ export function Pillars() {
               <Reveal key={p.slug} delay={120 + i * 90}>
                 <Link to={`/pilares/${p.slug}`} className="group cursor-pointer block">
                   <div
-                    className={`relative aspect-[4/5] sm:aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br ${p.gradient} p-6 sm:p-8 flex flex-col`}
+                    className={`relative rounded-2xl overflow-hidden bg-gradient-to-br ${p.gradient} p-6 sm:p-8 flex flex-col`}
+                    style={{ height: 'clamp(280px, 34vw, 420px)' }}
                   >
                     <Icon
-                      size={220}
+                      size={160}
                       strokeWidth={1}
-                      className="absolute -right-10 -bottom-10 text-white/10 pointer-events-none transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-3"
+                      className="absolute -right-8 -bottom-8 text-white/10 pointer-events-none transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-3"
                     />
 
                     <span className="relative w-11 h-11 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center mb-auto">
