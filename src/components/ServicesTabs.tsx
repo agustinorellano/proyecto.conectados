@@ -31,7 +31,11 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
         })}
       </div>
 
-      <div className="flex-1 p-6 sm:p-8 lg:p-10 flex flex-col justify-center min-h-[220px]">
+      <div
+        key={active}
+        className="flex-1 p-6 sm:p-8 lg:p-10 flex flex-col justify-center min-h-[220px]"
+        style={{ animation: 'servicePanelIn 0.45s cubic-bezier(0.4,0,0.2,1)' }}
+      >
         <span className="w-11 h-11 rounded-xl bg-[#EEF2FF] flex items-center justify-center mb-5">
           <CurrentIcon size={20} className="text-[#3355FF]" strokeWidth={1.6} />
         </span>
