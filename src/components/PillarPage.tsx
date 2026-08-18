@@ -5,6 +5,7 @@ import { Navbar } from './Navbar';
 import { RollButton } from './RollButton';
 import { Reveal } from './Reveal';
 import { CtaFooter } from './CtaFooter';
+import { ServicesTabs } from './ServicesTabs';
 import { PILLARS, getPillar } from '../data/pillars';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 
@@ -199,7 +200,9 @@ export function PillarPage() {
             </span>
           </Reveal>
 
-          {pillar.serviceDetails ? (
+          {pillar.slug === 'comunicacion-digital' && pillar.serviceDetails ? (
+            <ServicesTabs services={pillar.serviceDetails} />
+          ) : pillar.serviceDetails ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mt-8">
               {pillar.serviceDetails.map((service, i) => {
                 const ServiceIcon = service.icon;
