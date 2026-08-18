@@ -33,14 +33,24 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
 
       <div
         key={active}
-        className="flex-1 p-6 sm:p-8 lg:p-10 flex flex-col justify-center min-h-[220px]"
-        style={{ animation: 'servicePanelIn 0.45s cubic-bezier(0.4,0,0.2,1)' }}
+        className="flex-1 p-6 sm:p-8 lg:p-10 flex flex-col justify-center min-h-[220px] overflow-hidden"
       >
-        <span className="w-11 h-11 rounded-xl bg-[#EEF2FF] flex items-center justify-center mb-5">
+        <span
+          className="w-11 h-11 rounded-xl bg-[#EEF2FF] flex items-center justify-center mb-5"
+          style={{ animation: 'servicePanelIn 0.5s cubic-bezier(0.4,0,0.2,1) both' }}
+        >
           <CurrentIcon size={20} className="text-[#3355FF]" strokeWidth={1.6} />
         </span>
-        <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2.5">{current.title}</h3>
-        <p className="text-[14px] sm:text-[15px] text-gray-600 leading-relaxed max-w-lg">
+        <h3
+          className="text-lg sm:text-xl font-semibold text-gray-900 mb-2.5"
+          style={{ animation: 'servicePanelIn 0.5s cubic-bezier(0.4,0,0.2,1) 0.06s both' }}
+        >
+          {current.title}
+        </h3>
+        <p
+          className="text-[14px] sm:text-[15px] text-gray-600 leading-relaxed max-w-lg"
+          style={{ animation: 'servicePanelIn 0.5s cubic-bezier(0.4,0,0.2,1) 0.12s both' }}
+        >
           {current.description}
         </p>
       </div>
