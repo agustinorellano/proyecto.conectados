@@ -36,14 +36,27 @@ export function Pillars() {
               <Reveal key={p.slug} delay={120 + i * 90}>
                 <Link to={`/pilares/${p.slug}`} className="group cursor-pointer block">
                   <div
-                    className={`relative rounded-2xl overflow-hidden bg-gradient-to-br ${p.gradient} p-6 sm:p-8 flex flex-col`}
+                    className={`relative rounded-2xl overflow-hidden p-6 sm:p-8 flex flex-col ${
+                      p.cardImage ? 'bg-gray-900' : `bg-gradient-to-br ${p.gradient}`
+                    }`}
                     style={{ height: 'clamp(280px, 34vw, 420px)' }}
                   >
-                    <Icon
-                      size={160}
-                      strokeWidth={1}
-                      className="absolute -right-8 -bottom-8 text-white/10 pointer-events-none transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-3"
-                    />
+                    {p.cardImage ? (
+                      <>
+                        <img
+                          src={p.cardImage}
+                          alt={`Portada de ${p.title}`}
+                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-black/10" />
+                      </>
+                    ) : (
+                      <Icon
+                        size={160}
+                        strokeWidth={1}
+                        className="absolute -right-8 -bottom-8 text-white/10 pointer-events-none transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-3"
+                      />
+                    )}
 
                     <span className="relative w-11 h-11 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center mb-auto">
                       <Icon size={20} className="text-white" strokeWidth={1.6} />

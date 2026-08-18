@@ -243,7 +243,6 @@ export const PILLARS: Pillar[] = [
     heroTheme: 'light',
     heroHighlight: 'Desarrollo web',
     heroImage: '/desarrollo-web-hero.png',
-    cardImage: '/desarrollo-web-card.png',
   },
   {
     slug: 'soluciones-comerciales',
