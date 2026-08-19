@@ -3,51 +3,41 @@ import { RollButton } from './RollButton';
 import { LogoMark } from './Logo';
 import { Reveal } from './Reveal';
 
-// Shader animado (Swirl/ChromaFlow) queda desactivado para que se vea limpia
-// la foto de fondo. Se deja el código listo por si se vuelve a necesitar.
-const SHOW_HERO_SHADER = false;
-
 export function Hero() {
   return (
-    <header
-      className="relative h-[75vh] min-h-[520px] sm:min-h-[600px] flex flex-col bg-[#050814] overflow-hidden bg-cover"
-      style={{ backgroundImage: "url('/hero-team.png')", backgroundPosition: '78% center' }}
-    >
-      {SHOW_HERO_SHADER && (
-        <div className="absolute inset-0 z-10 pointer-events-none mix-blend-screen">
-          <Shader className="w-full h-full">
-            <Swirl colorA="#0B1230" colorB="#141B45" detail={1.9} opacity={0.7} />
-            <ChromaFlow
-              baseColor="#0B1230"
-              upColor="#3355FF"
-              downColor="#6E8CFF"
-              leftColor="#3355FF"
-              rightColor="#8FA8FF"
-              intensity={1.3}
-              momentum={20}
-              radius={4.2}
-            />
-            <FlutedGlass
-              aberration={0.8}
-              angle={31}
-              frequency={8}
-              highlight={0.28}
-              highlightSoftness={0.15}
-              lightAngle={-90}
-              refraction={5.5}
-              shape="rounded"
-              softness={1}
-              speed={0.2}
-            />
-            <FilmGrain strength={0.06} />
-          </Shader>
-        </div>
-      )}
-      <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-[#050814] via-[#050814]/75 to-[#050814]/10" />
-      <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-[#050814] via-transparent to-[#050814]/30" />
+    <header className="relative min-h-screen flex flex-col bg-[#050814] overflow-hidden">
+      <div className="absolute inset-0 z-10 pointer-events-none mix-blend-screen">
+        <Shader className="w-full h-full">
+          <Swirl colorA="#0B1230" colorB="#141B45" detail={1.9} opacity={0.7} />
+          <ChromaFlow
+            baseColor="#0B1230"
+            upColor="#3355FF"
+            downColor="#6E8CFF"
+            leftColor="#3355FF"
+            rightColor="#8FA8FF"
+            intensity={1.3}
+            momentum={20}
+            radius={4.2}
+          />
+          <FlutedGlass
+            aberration={0.8}
+            angle={31}
+            frequency={8}
+            highlight={0.28}
+            highlightSoftness={0.15}
+            lightAngle={-90}
+            refraction={5.5}
+            shape="rounded"
+            softness={1}
+            speed={0.2}
+          />
+          <FilmGrain strength={0.06} />
+        </Shader>
+      </div>
+      <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-[#050814] via-[#050814]/10 to-transparent" />
 
-      <div className="relative z-20 flex-1 flex flex-col justify-center pt-24 sm:pt-28">
-        <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12">
+      <div className="relative z-20 flex-1 flex flex-col justify-end pt-24 sm:pt-28">
+        <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12 pb-14 sm:pb-16 lg:pb-20">
           <Reveal eager>
             <span
               className="block font-medium text-white leading-none tracking-[-0.03em]"

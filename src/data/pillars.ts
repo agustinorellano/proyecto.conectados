@@ -161,7 +161,6 @@ export const PILLARS: Pillar[] = [
       'Contenido estratégico que conecta',
       'Campañas que impulsan resultados',
     ],
-    cardImage: '/comunicacion-digital-card.png',
   },
   {
     slug: 'desarrollo-web',
