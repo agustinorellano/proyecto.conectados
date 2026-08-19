@@ -10,7 +10,8 @@ const SHOW_HERO_SHADER = false;
 export function Hero() {
   return (
     <header
-      className="relative h-[70vh] min-h-[480px] sm:min-h-[560px] flex flex-col bg-gradient-to-br from-[#0B1230] to-[#050814] overflow-hidden"
+      className="relative h-[75vh] min-h-[520px] sm:min-h-[600px] flex flex-col bg-[#050814] overflow-hidden bg-cover"
+      style={{ backgroundImage: "url('/hero-team.png')", backgroundPosition: '78% center' }}
     >
       {SHOW_HERO_SHADER && (
         <div className="absolute inset-0 z-10 pointer-events-none mix-blend-screen">
@@ -42,8 +43,11 @@ export function Hero() {
           </Shader>
         </div>
       )}
-      <div className="relative z-20 flex-1 flex flex-col justify-end pt-24 sm:pt-28">
-        <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12 pb-14 sm:pb-16 lg:pb-20">
+      <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-[#050814] via-[#050814]/75 to-[#050814]/10" />
+      <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-[#050814] via-transparent to-[#050814]/30" />
+
+      <div className="relative z-20 flex-1 flex flex-col justify-center pt-24 sm:pt-28">
+        <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12">
           <Reveal eager>
             <span
               className="block font-medium text-white leading-none tracking-[-0.03em]"
