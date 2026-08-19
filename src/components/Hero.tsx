@@ -1,69 +1,53 @@
-import { Shader, Swirl, ChromaFlow, FlutedGlass, FilmGrain } from 'shaders/react';
+import { useState } from 'react';
 import { RollButton } from './RollButton';
-import { LogoMark } from './Logo';
+import { NotificationFeed } from './NotificationFeed';
 import { Reveal } from './Reveal';
 
 export function Hero() {
+  const [clicks, setClicks] = useState(0);
+
   return (
-    <header className="relative min-h-screen flex flex-col bg-[#050814] overflow-hidden">
-      <div className="absolute inset-0 z-10 pointer-events-none mix-blend-screen">
-        <Shader className="w-full h-full">
-          <Swirl colorA="#0B1230" colorB="#141B45" detail={1.9} opacity={0.7} />
-          <ChromaFlow
-            baseColor="#0B1230"
-            upColor="#3355FF"
-            downColor="#6E8CFF"
-            leftColor="#3355FF"
-            rightColor="#8FA8FF"
-            intensity={1.3}
-            momentum={20}
-            radius={4.2}
-          />
-          <FlutedGlass
-            aberration={0.8}
-            angle={31}
-            frequency={8}
-            highlight={0.28}
-            highlightSoftness={0.15}
-            lightAngle={-90}
-            refraction={5.5}
-            shape="rounded"
-            softness={1}
-            speed={0.2}
-          />
-          <FilmGrain strength={0.06} />
-        </Shader>
-      </div>
-      <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-[#050814] via-[#050814]/10 to-transparent" />
+    <header className="relative min-h-screen flex flex-col bg-white overflow-hidden">
+      <NotificationFeed />
 
-      <div className="relative z-20 flex-1 flex flex-col justify-end pt-24 sm:pt-28">
-        <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12 pb-14 sm:pb-16 lg:pb-20">
-          <Reveal eager>
+      <div className="relative z-20 flex-1 flex flex-col items-center justify-center pt-24 sm:pt-28 px-5">
+        <Reveal eager className="text-center">
+          <button
+            type="button"
+            onClick={() => setClicks((c) => c + 1)}
+            className="text-center select-none focus:outline-none"
+            aria-label="Somos Conectado."
+          >
             <span
-              className="block font-medium text-white leading-none tracking-[-0.03em]"
-              style={{ fontSize: 'clamp(2.2rem, 6vw, 4.8rem)' }}
+              key={clicks}
+              className="block"
+              style={clicks > 0 ? { animation: 'heroClickPop 0.55s cubic-bezier(0.34,1.56,0.64,1)' } : undefined}
             >
-              Conectado.
-            </span>
-          </Reveal>
-
-          <Reveal eager delay={140} className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4 sm:gap-5">
-            <RollButton
-              text="Empezar un proyecto"
-              href="https://cal.com/contacto-conectados-hjslxl/30min"
-              variant="accent"
-              size="lg"
-              calLink="contacto-conectados-hjslxl/30min"
-            />
-
-            <div className="inline-flex items-center gap-3 bg-white rounded-[4px] px-3 py-2 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.12)] transition-shadow duration-300">
-              <LogoMark className="w-5 h-5 sm:w-6 sm:h-6 text-[#3355FF]" />
-              <span className="text-[13px] sm:text-sm font-medium text-gray-900">
-                Un solo equipo, sin intermediarios
+              <span
+                className="block font-medium text-gray-400 leading-[0.95] tracking-[-0.03em]"
+                style={{ fontSize: 'clamp(1.6rem, 4.4vw, 3.2rem)' }}
+              >
+                Somos
               </span>
-            </div>
-          </Reveal>
-        </div>
+              <span
+                className="block font-semibold text-gray-900 leading-[0.95] tracking-[-0.04em] -mt-1 sm:-mt-2"
+                style={{ fontSize: 'clamp(3.2rem, 11vw, 8rem)' }}
+              >
+                Conectado<span className="text-[#3355FF]">.</span>
+              </span>
+            </span>
+          </button>
+        </Reveal>
+
+        <Reveal eager delay={160} className="mt-9 sm:mt-12">
+          <RollButton
+            text="Empezar un proyecto"
+            href="https://cal.com/contacto-conectados-hjslxl/30min"
+            variant="dark"
+            size="lg"
+            calLink="contacto-conectados-hjslxl/30min"
+          />
+        </Reveal>
       </div>
     </header>
   );
