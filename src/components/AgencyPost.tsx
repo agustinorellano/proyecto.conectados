@@ -208,7 +208,7 @@ export function AgencyPost() {
   const [showBurst, setShowBurst] = useState(false);
   const reducedMotion = useReducedMotion();
   const trackRef = useRef<HTMLDivElement>(null);
-  const scrollDebounce = useRef<ReturnType<typeof setTimeout>>();
+  const scrollDebounce = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   const goTo = (index: number, behavior: ScrollBehavior = 'smooth') => {
     setActive(index);
