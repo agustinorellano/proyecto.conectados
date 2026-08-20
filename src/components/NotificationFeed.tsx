@@ -15,21 +15,49 @@ const SERVICES: ServiceNotif[] = [
   { icon: Gauge, label: 'Optimización' },
 ];
 
-const POSITIONS: React.CSSProperties[] = [
-  { top: '10%', left: '5%' },
-  { top: '14%', right: '6%' },
-  { top: '36%', left: '3%' },
-  { top: '40%', right: '4%' },
-  { top: '64%', left: '8%' },
-  { top: '68%', right: '9%' },
-  { top: '82%', left: '32%' },
-  { top: '8%', left: '56%' },
+interface Spot {
+  top: string;
+  left?: string;
+  right?: string;
+  rotate: number;
+}
+
+// Zona segura: dejan libre la franja de la navbar (arriba) y el bloque central
+// de texto donde vive "Somos Conectado."
+const DESKTOP_SPOTS: Spot[] = [
+  { top: '16%', left: '4%', rotate: -3 },
+  { top: '13%', left: '36%', rotate: 2 },
+  { top: '19%', right: '5%', rotate: 3 },
+  { top: '78%', left: '9%', rotate: 2 },
+  { top: '72%', left: '38%', rotate: -2 },
+  { top: '80%', right: '7%', rotate: -3 },
+  { top: '22%', left: '16%', rotate: -2 },
+  { top: '75%', right: '22%', rotate: 3 },
 ];
+
+const MOBILE_SPOTS: Spot[] = [
+  { top: '13%', left: '3%', rotate: -4 },
+  { top: '12%', right: '4%', rotate: 3 },
+  { top: '84%', left: '2%', rotate: 3 },
+  { top: '85%', right: '3%', rotate: -3 },
+];
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 639px)');
+    setIsMobile(mq.matches);
+    const onChange = () => setIsMobile(mq.matches);
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
+  return isMobile;
+}
 
 interface Toast {
   id: number;
   service: ServiceNotif;
-  position: React.CSSProperties;
+  spot: Spot;
   visible: boolean;
 }
 
@@ -39,6 +67,9 @@ export function NotificationFeed() {
   const [toasts, setToasts] = useState<Toast[]>([]);
   const lastPosIndex = useRef(-1);
   const lastServiceIndex = useRef(-1);
+  const isMobile = useIsMobile();
+  const isMobileRef = useRef(isMobile);
+  isMobileRef.current = isMobile;
 
   useEffect(() => {
     let cancelled = false;
@@ -47,8 +78,10 @@ export function NotificationFeed() {
     const spawn = () => {
       if (cancelled) return;
 
-      let posIndex = Math.floor(Math.random() * POSITIONS.length);
-      if (posIndex === lastPosIndex.current) posIndex = (posIndex + 1) % POSITIONS.length;
+      const spots = isMobileRef.current ? MOBILE_SPOTS : DESKTOP_SPOTS;
+
+      let posIndex = Math.floor(Math.random() * spots.length);
+      if (posIndex === lastPosIndex.current) posIndex = (posIndex + 1) % spots.length;
       lastPosIndex.current = posIndex;
 
       let svcIndex = Math.floor(Math.random() * SERVICES.length);
@@ -58,7 +91,7 @@ export function NotificationFeed() {
       const id = toastId++;
       setToasts((prev) => [
         ...prev,
-        { id, service: SERVICES[svcIndex], position: POSITIONS[posIndex], visible: false },
+        { id, service: SERVICES[svcIndex], spot: spots[posIndex], visible: false },
       ]);
 
       timeouts.push(
@@ -94,25 +127,35 @@ export function NotificationFeed() {
     <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
       {toasts.map((toast) => {
         const Icon = toast.service.icon;
+        const { top, left, right, rotate } = toast.spot;
+        const hiddenRotate = rotate + (rotate >= 0 ? 4 : -4);
         return (
           <div
             key={toast.id}
-            className={`absolute flex items-center gap-3 bg-white rounded-2xl shadow-[0_12px_32px_rgba(15,23,42,0.16)] px-4 py-3 transition-all duration-500 ease-out ${
-              toast.visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
-            }`}
-            style={{ ...toast.position, width: 216 }}
+            className="absolute flex items-center gap-2.5 sm:gap-3 bg-white rounded-2xl shadow-[0_12px_32px_rgba(15,23,42,0.16)] px-3.5 py-2.5 sm:px-4 sm:py-3 transition-all duration-500 ease-out"
+            style={{
+              top,
+              left,
+              right,
+              width: isMobile ? 172 : 216,
+              opacity: toast.visible ? 1 : 0,
+              transform: toast.visible
+                ? `rotate(${rotate}deg) translateY(0)`
+                : `rotate(${hiddenRotate}deg) translateY(10px)`,
+            }}
           >
-            <span className="w-9 h-9 rounded-xl bg-[#3355FF] flex items-center justify-center flex-shrink-0">
-              <Icon size={16} className="text-white" strokeWidth={1.8} />
+            <span className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-[#3355FF] flex items-center justify-center flex-shrink-0">
+              <Icon size={14} className="text-white sm:hidden" strokeWidth={1.8} />
+              <Icon size={16} className="hidden sm:block text-white" strokeWidth={1.8} />
             </span>
             <div className="min-w-0">
               <div className="flex items-center justify-between gap-2">
-                <span className="text-[12.5px] font-semibold text-gray-900 truncate">
+                <span className="text-[11.5px] sm:text-[12.5px] font-semibold text-gray-900 truncate">
                   {toast.service.label}
                 </span>
-                <span className="text-[9px] text-gray-400 flex-shrink-0">ahora</span>
+                <span className="text-[8.5px] sm:text-[9px] text-gray-400 flex-shrink-0">ahora</span>
               </div>
-              <p className="text-[11.5px] text-gray-500">Nuevo proyecto en marcha</p>
+              <p className="text-[10.5px] sm:text-[11.5px] text-gray-500 truncate">Nuevo proyecto en marcha</p>
             </div>
           </div>
         );
