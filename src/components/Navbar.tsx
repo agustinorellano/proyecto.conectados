@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { LogoBadge } from './Logo';
@@ -18,10 +18,8 @@ const NAV_LINKS = [
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
-  const activeId = useScrollSpy(
-    NAV_LINKS.map((l) => l.id),
-    pathname === '/',
-  );
+  const navIds = useMemo(() => NAV_LINKS.map((l) => l.id), []);
+  const activeId = useScrollSpy(navIds, pathname === '/');
 
   const navRef = useRef<HTMLDivElement>(null);
   const linkRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
