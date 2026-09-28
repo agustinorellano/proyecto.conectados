@@ -142,7 +142,7 @@ export function BuildStack({ containerRef, staticMode }: BuildStackProps) {
       const scrolled = Math.min(Math.max(-rect.top, 0), Math.max(total, 0));
       const progress = total > 0 ? scrolled / total : 0;
 
-      const spacingScale = 5 - 4 * progress;
+      const spacingScale = 3.2 - 2.2 * progress;
 
       LAYERS.forEach((_, i) => {
         const layerEl = layerRefs.current[i];
@@ -193,7 +193,7 @@ export function BuildStack({ containerRef, staticMode }: BuildStackProps) {
   return (
     <div className="flex flex-col items-center gap-16 lg:flex-row lg:items-center lg:gap-14">
       <div
-        className="relative overflow-hidden"
+        className={`relative ${staticMode ? 'overflow-hidden' : ''}`}
         style={{ perspective: 1400, width: 320, height: 420 }}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
