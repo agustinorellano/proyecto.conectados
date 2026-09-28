@@ -6,38 +6,12 @@
   box-sizing: border-box;
 }
 
-.hide-scrollbar {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
 @keyframes marquee {
   from {
     transform: translateX(0);
   }
   to {
     transform: translateX(-50%);
-  }
-}
-
-@keyframes heartBurst {
-  0% {
-    opacity: 0;
-    transform: scale(0.4);
-  }
-  35% {
-    opacity: 1;
-    transform: scale(1.15);
-  }
-  60% {
-    transform: scale(0.95);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.05);
   }
 }
 
