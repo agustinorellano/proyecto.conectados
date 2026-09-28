@@ -6,6 +6,7 @@ import { RollButton } from './RollButton';
 import { Reveal } from './Reveal';
 import { CtaFooter } from './CtaFooter';
 import { ServicesTabs } from './ServicesTabs';
+import { ScrollProgress } from './ScrollProgress';
 import { PILLARS, getPillar } from '../data/pillars';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 
@@ -40,6 +41,7 @@ export function PillarPage() {
 
   return (
     <div>
+      <ScrollProgress />
       <Navbar />
       {isLight ? (
         <header className="relative bg-gradient-to-br from-white via-[#F7F8FF] to-[#ECEFFF] overflow-hidden">

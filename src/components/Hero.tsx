@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { RollButton } from './RollButton';
 import { NotificationFeed } from './NotificationFeed';
+import { CursorGlow } from './CursorGlow';
 import { Reveal } from './Reveal';
 
 export function Hero() {
@@ -8,6 +9,7 @@ export function Hero() {
 
   return (
     <header className="relative min-h-screen flex flex-col bg-white overflow-hidden">
+      <CursorGlow />
       <NotificationFeed />
 
       <div className="relative z-20 flex-1 flex flex-col items-center justify-center pt-24 sm:pt-28 px-5">

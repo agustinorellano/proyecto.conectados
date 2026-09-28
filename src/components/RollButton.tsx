@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 
 type Variant = 'dark' | 'accent' | 'outline' | 'ghost' | 'ghost-light' | 'whatsapp';
@@ -36,6 +37,34 @@ export function RollButton({
   const textSize = size === 'lg' ? 'text-[13px] sm:text-sm' : 'text-[13px]';
   const padding = size === 'lg' ? 'pl-5 sm:pl-6 pr-2 py-2' : 'pl-5 pr-2 py-2';
 
+  const canMagnetize = size === 'lg';
+  const magneticRef = useRef<HTMLAnchorElement>(null);
+  const [pull, setPull] = useState({ x: 0, y: 0 });
+  const canHover = useRef(false);
+
+  useEffect(() => {
+    canHover.current = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  }, []);
+
+  const magneticHandlers = canMagnetize
+    ? {
+        ref: magneticRef,
+        onMouseMove: (e: React.MouseEvent<HTMLAnchorElement>) => {
+          if (!canHover.current || !magneticRef.current) return;
+          const r = magneticRef.current.getBoundingClientRect();
+          setPull({
+            x: (e.clientX - r.left - r.width / 2) * 0.25,
+            y: (e.clientY - r.top - r.height / 2) * 0.25,
+          });
+        },
+        onMouseLeave: () => setPull({ x: 0, y: 0 }),
+        style: {
+          transform: `translate3d(${pull.x}px, ${pull.y}px, 0)`,
+          transition: 'transform 0.35s cubic-bezier(0.25,0.1,0.25,1)',
+        },
+      }
+    : {};
+
   const calProps = calLink
     ? {
         'data-cal-link': calLink,
@@ -65,6 +94,7 @@ export function RollButton({
         rel={target ? 'noopener noreferrer' : undefined}
         className="group inline-flex items-center gap-3 font-medium text-gray-900"
         {...calProps}
+        {...magneticHandlers}
       >
         {textEl}
         <span
@@ -86,6 +116,7 @@ export function RollButton({
         rel={target ? 'noopener noreferrer' : undefined}
         className="group inline-flex items-center gap-3 font-medium text-white"
         {...calProps}
+        {...magneticHandlers}
       >
         {textEl}
         <span
@@ -107,6 +138,7 @@ export function RollButton({
         rel={target ? 'noopener noreferrer' : undefined}
         className={`group inline-flex items-center gap-3 rounded-full font-medium border border-gray-300 text-gray-900 hover:border-gray-900 transition-colors duration-300 ${padding} ${textSize}`}
         {...calProps}
+        {...magneticHandlers}
       >
         {textEl}
         <span
@@ -126,6 +158,7 @@ export function RollButton({
       rel={target ? 'noopener noreferrer' : undefined}
       className={`group inline-flex items-center gap-3 rounded-full font-medium transition-colors duration-300 ${padding} ${textSize} ${FILLED_STYLES[variant]}`}
       {...calProps}
+      {...magneticHandlers}
     >
       {textEl}
       <span
