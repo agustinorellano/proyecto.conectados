@@ -26,6 +26,7 @@ import {
   RefreshCw,
   FlaskConical,
   FileBarChart,
+  Package,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -113,12 +114,19 @@ export const PILLARS: Pillar[] = [
         description:
           'Planificamos el contenido con anticipación, para que la comunicación nunca dependa de la improvisación.',
       },
+      {
+        icon: Package,
+        title: 'Kit digital de marca',
+        description:
+          'Catálogo, banners, piezas para redes y argumentario de venta, listos para tu equipo comercial o tus distribuidores.',
+      },
     ],
     process: [
       {
         icon: Search,
-        title: 'Descubrimos tu marca',
-        description: 'Entendemos quién sos, a quién le hablás y qué te diferencia.',
+        title: 'Diagnóstico de marca',
+        description:
+          'Analizamos tu marca, tu mercado y tu comunicación actual, y te entregamos un diagnóstico claro de dónde estás parado.',
       },
       {
         icon: Compass,
@@ -169,7 +177,7 @@ export const PILLARS: Pillar[] = [
     cardDescription:
       'Sitios, e-commerce y apps a medida, rápidos y pensados para convertir visitas en clientes.',
     longDescription:
-      'Diseñamos sitios, tiendas online y sistemas a medida que convierten visitas en clientes y optimizan procesos de tu negocio. No entregamos solo una plantilla bonita: entendemos tu negocio primero y construimos alrededor de cómo vendés.',
+      'Diseñamos sitios, tiendas online y sistemas a medida que convierten visitas en clientes y optimizan procesos de tu negocio. No entregamos solo una plantilla bonita: entendemos tu negocio primero y construimos alrededor de cómo vendés. Empezamos por una base sólida y sumamos sistemas más complejos recién cuando el negocio los necesita.',
     services: [
       'Sitios institucionales',
       'E-commerce y tiendas online',
@@ -203,8 +211,9 @@ export const PILLARS: Pillar[] = [
     process: [
       {
         icon: Search,
-        title: 'Descubrimos tu negocio',
-        description: 'Entendemos tus objetivos, tu audiencia y tu mercado.',
+        title: 'Diagnóstico técnico',
+        description:
+          'Analizamos tu sitio o sistema actual y tu negocio, y te entregamos un diagnóstico claro con el camino a seguir.',
       },
       {
         icon: Pencil,
@@ -250,7 +259,7 @@ export const PILLARS: Pillar[] = [
     cardDescription:
       'Ordenamos y potenciamos tu proceso de ventas para que cada lead tenga un camino claro.',
     longDescription:
-      'Ponemos orden en cómo tu equipo vende: desde que entra un lead hasta que se cierra el negocio. Menos oportunidades perdidas, más visibilidad de en qué etapa está cada cliente.',
+      'Ponemos orden en cómo tu equipo vende: desde que entra un lead hasta que se cierra el negocio. Menos oportunidades perdidas, más visibilidad de en qué etapa está cada cliente. Arrancamos con lo que tu operación necesita hoy y avanzamos hacia automatización más compleja cuando los datos lo justifican.',
     services: [
       'Estrategia y funnels de ventas',
       'CRM y automatización comercial',
@@ -286,8 +295,9 @@ export const PILLARS: Pillar[] = [
     process: [
       {
         icon: Search,
-        title: 'Descubrimos tu negocio',
-        description: 'Entendemos cómo vendés hoy, qué funciona y dónde se pierden oportunidades.',
+        title: 'Diagnóstico comercial',
+        description:
+          'Analizamos cómo vendés hoy y te entregamos un diagnóstico claro de dónde se pierden oportunidades.',
       },
       {
         icon: Workflow,
@@ -366,8 +376,9 @@ export const PILLARS: Pillar[] = [
     process: [
       {
         icon: Search,
-        title: 'Medimos',
-        description: 'Instalamos o auditamos la medición actual de tu negocio digital.',
+        title: 'Diagnóstico de datos',
+        description:
+          'Auditamos la medición actual de tu negocio digital y te entregamos un diagnóstico claro de qué falta y qué funciona.',
       },
       {
         icon: FileBarChart,

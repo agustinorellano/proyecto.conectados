@@ -86,6 +86,18 @@ const VISUALS: Record<string, () => ReactElement> = {
       </div>
     );
   },
+  'Kit digital de marca': () => (
+    <div className="flex flex-wrap gap-2 mt-1 max-w-sm">
+      {['Catálogo', 'Banners', 'Piezas para redes', 'Argumentario de venta'].map((tag) => (
+        <span
+          key={tag}
+          className="text-[12px] bg-[#EEF2FF] border border-[#3355FF]/20 text-[#3355FF] px-3 py-1.5 rounded-full"
+        >
+          {tag}
+        </span>
+      ))}
+    </div>
+  ),
 };
 
 export function ServicesTabs({ services }: ServicesTabsProps) {

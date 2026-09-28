@@ -36,6 +36,11 @@ export function CtaFooter() {
           >
             contacto@proyectoconectados.com
           </a>
+          <p className="text-white/35 text-[12.5px] max-w-sm">
+            ¿Ya lanzaste tu proyecto? Sumate a{' '}
+            <span className="text-white/70 font-medium">Plan Conectado</span>, nuestro soporte
+            mensual continuo.
+          </p>
         </Reveal>
       </section>
 
