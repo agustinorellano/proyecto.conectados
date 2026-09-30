@@ -18,7 +18,7 @@ interface LayerDef {
   content: ReactElement;
 }
 
-function IdeaLayer() {
+function DiagnosticoLayer() {
   return (
     <div className="absolute inset-0 rounded-2xl bg-white/[0.04] border border-white/10 overflow-hidden">
       <span className="absolute left-[18%] top-[30%] w-10 h-10 rounded-full border border-white/25" />
@@ -42,17 +42,7 @@ function EstrategiaLayer() {
   );
 }
 
-function DisenoLayer() {
-  return (
-    <div className="absolute inset-0 rounded-2xl bg-[#0B142C] border border-[#315BFF]/25 overflow-hidden p-5">
-      <span className="text-white font-semibold text-2xl leading-none select-none">Aa</span>
-      <span className="absolute right-5 top-5 w-8 h-8 rounded-lg bg-[#315BFF]" />
-      <span className="absolute right-5 bottom-5 w-10 h-6 rounded-md bg-white/90" />
-    </div>
-  );
-}
-
-function DesarrolloLayer() {
+function EjecucionLayer() {
   return (
     <div className="absolute inset-0 rounded-2xl bg-[#080D1E] border border-white/10 overflow-hidden p-5 flex flex-col justify-center gap-2">
       {[70, 45, 58, 30].map((w, i) => (
@@ -66,31 +56,33 @@ function DesarrolloLayer() {
   );
 }
 
-function ResultadoLayer() {
+function OptimizacionLayer() {
   return (
-    <div className="absolute inset-0 rounded-2xl bg-[#F5F7FA] overflow-hidden shadow-[0_20px_60px_rgba(49,91,255,0.25)]">
-      <div className="flex items-center gap-1.5 px-4 pt-4">
+    <div className="absolute inset-0 rounded-2xl bg-[#F5F7FA] overflow-hidden shadow-[0_20px_60px_rgba(49,91,255,0.25)] p-4">
+      <svg viewBox="0 0 100 50" className="absolute left-4 right-4 bottom-4 h-10 w-[calc(100%-2rem)]">
+        <polyline
+          points="0,40 22,28 44,32 66,14 100,4"
+          fill="none"
+          stroke="#315BFF"
+          strokeWidth="3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+      <div className="flex items-center gap-1.5">
         <span className="w-1.5 h-1.5 rounded-full bg-gray-300" />
         <span className="w-1.5 h-1.5 rounded-full bg-gray-300" />
         <span className="w-1.5 h-1.5 rounded-full bg-gray-300" />
-      </div>
-      <div className="px-4 pt-3 flex flex-col gap-2">
-        <span className="block h-2 w-2/3 rounded-full bg-gray-200" />
-        <span className="block h-2 w-1/2 rounded-full bg-gray-200" />
-        <span className="mt-2 inline-flex w-fit px-3 py-1.5 rounded-full bg-[#315BFF] text-white text-[10px] font-medium">
-          Listo
-        </span>
       </div>
     </div>
   );
 }
 
 const LAYERS: LayerDef[] = [
-  { key: 'idea', label: 'Idea', content: <IdeaLayer /> },
+  { key: 'diagnostico', label: 'Diagnóstico', content: <DiagnosticoLayer /> },
   { key: 'estrategia', label: 'Estrategia', content: <EstrategiaLayer /> },
-  { key: 'diseno', label: 'Diseño', content: <DisenoLayer /> },
-  { key: 'desarrollo', label: 'Desarrollo', content: <DesarrolloLayer /> },
-  { key: 'resultado', label: 'Resultado', content: <ResultadoLayer /> },
+  { key: 'ejecucion', label: 'Ejecución', content: <EjecucionLayer /> },
+  { key: 'optimizacion', label: 'Optimización continua', content: <OptimizacionLayer /> },
 ];
 
 const BASE_Y = 24;
