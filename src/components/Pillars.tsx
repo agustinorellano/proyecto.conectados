@@ -39,7 +39,7 @@ export function Pillars() {
                     className={`relative rounded-2xl overflow-hidden p-6 sm:p-8 flex flex-col ${
                       p.cardImage ? 'bg-gray-900' : `bg-gradient-to-br ${p.gradient}`
                     }`}
-                    style={{ height: 'clamp(280px, 34vw, 420px)' }}
+                    style={{ minHeight: 'clamp(360px, 42vw, 500px)' }}
                   >
                     {p.cardImage ? (
                       <>
@@ -52,23 +52,36 @@ export function Pillars() {
                       </>
                     ) : (
                       <Icon
-                        size={160}
+                        size={200}
                         strokeWidth={1}
-                        className="absolute -right-8 -bottom-8 text-white/10 pointer-events-none transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-3"
+                        className="absolute -right-10 -bottom-10 text-white/10 pointer-events-none transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-3"
                       />
                     )}
 
-                    <span className="relative w-11 h-11 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center mb-auto">
-                      <Icon size={20} className="text-white" strokeWidth={1.6} />
+                    <span className="relative w-12 h-12 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center mb-auto">
+                      <Icon size={22} className="text-white" strokeWidth={1.6} />
                     </span>
 
                     <div className="relative">
-                      <h3 className="text-white text-2xl sm:text-3xl font-semibold tracking-[-0.02em] mb-3 leading-[1.1]">
+                      <h3 className="text-white text-3xl sm:text-4xl font-semibold tracking-[-0.02em] mb-3 leading-[1.08]">
                         {p.title}
                       </h3>
-                      <p className="text-white/70 text-[13px] sm:text-sm leading-relaxed max-w-[34ch] mb-5">
+                      <p className="text-white/70 text-[13px] sm:text-[15px] leading-relaxed max-w-[36ch] mb-5">
                         {p.cardDescription}
                       </p>
+
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {p.services.map((service, si) => (
+                          <span
+                            key={service}
+                            className="text-[11px] sm:text-[12px] text-white/80 bg-white/10 border border-white/15 rounded-full px-3 py-1.5 transition-all duration-300 group-hover:bg-white/15 group-hover:-translate-y-0.5"
+                            style={{ transitionDelay: `${si * 40}ms` }}
+                          >
+                            {service}
+                          </span>
+                        ))}
+                      </div>
+
                       <span className="inline-flex w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white items-center justify-center transition-transform duration-300 group-hover:translate-x-1">
                         <ArrowRight size={16} className="text-gray-900" />
                       </span>
